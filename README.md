@@ -44,7 +44,7 @@ certbot --nginx
 
 Finally you can get the program to work with it from pip or github :
 
-```
+```bash
 pip install geotrouvetout
 git clone https://github.com/paulchambaz/geotrouvetout.git
 ```
@@ -55,13 +55,13 @@ git clone https://github.com/paulchambaz/geotrouvetout.git
 
 Once you have the program installed on your server, you will want to start it, first run this command to check that there are no errors: 
 
-```
+```bash
 geotrouvetout -d
 ```
 
 To automate this command as a service, you can simply run :
 
-```
+```bash
 systemctl start geotrouvetout.service
 systemctl enable geotrouvetout.service
 ```
@@ -70,7 +70,7 @@ systemctl enable geotrouvetout.service
 
 If you have gotten the project from pip or from github, you can use this project as a simple command line tool :
 
-```
+```bash
 # direct path to image
 geotrouvetout -i path/to/image.jpg
 # start a daemon for the rest api
@@ -81,21 +81,21 @@ geotrouvetout -d
 
 This project has been unit tested, if you want to run all tests, you can simply run : 
 
-```
+```bash
 make test
 ```
 
 This project has also been linted for style, if you want to lint the program, you can run :
 
 
-```
+```bash
 make lint
 ```
 
 If you want to do both, you can just do :
 
 
-```
+```bash
 make full-test
 ```
 
