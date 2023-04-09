@@ -1,0 +1,14 @@
+{
+  "manifest_version": 2,
+  "name": "Geoguessr Assistant",
+  "version": "1.0.0",
+  "description": "A web extension to help with Geoguessr geolocation predictions",
+  "content_scripts": [
+    {
+
+      "matches": ["*://*.geoguessr.com/*"],
+      "js": ["dist/content-script.js"]
+    }
+  ],
+  "permissions": ["activeTab"]
+}

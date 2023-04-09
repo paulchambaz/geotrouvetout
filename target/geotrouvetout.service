@@ -1,0 +1,15 @@
+[Unit]
+Description=Geotrouvetout container daemon
+After=network.target
+
+[Service]
+User=root
+Group=root
+ExecStartPre=sh -c "docker stop geotrouvetout || true"
+ExecStart=sh -c "docker run --rm --name geotrouvetout -p 8000:8000 paulchambaz/geotrouvetout -d"
+ExecStop=sh -c "docker stop geotrouvetout"
+KillMode=process
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

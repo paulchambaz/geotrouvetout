@@ -1,0 +1,1586 @@
+{
+  "ABW": {
+    "continent": "AM",
+    "zone": "WIN",
+    "languages": [
+      "NL",
+      "PA"
+    ]
+  },
+  "AFG": {
+    "continent": "AS",
+    "zone": "SAS",
+    "languages": [
+      "PS",
+      "UZ",
+      "TK"
+    ]
+  },
+  "AGO": {
+    "continent": "AF",
+    "zone": "SAF",
+    "languages": [
+      "PT"
+    ]
+  },
+  "AIA": {
+    "continent": "AM",
+    "zone": "WIN",
+    "languages": [
+      "EN"
+    ]
+  },
+  "ALB": {
+    "continent": "EU",
+    "zone": "SEE",
+    "languages": [
+      "SQ"
+    ]
+  },
+  "ARE": {
+    "continent": "AS",
+    "zone": "SWA",
+    "languages": [
+      "AR"
+    ]
+  },
+  "ARG": {
+    "continent": "AM",
+    "zone": "SAM",
+    "languages": [
+      "ES",
+      "GN"
+    ]
+  },
+  "ARM": {
+    "continent": "AS",
+    "zone": "SWA",
+    "languages": [
+      "HY",
+      "RU"
+    ]
+  },
+  "ASM": {
+    "continent": "OC",
+    "zone": "PAC",
+    "languages": [
+      "EN",
+      "SM"
+    ]
+  },
+  "ATG": {
+    "continent": "AM",
+    "zone": "WIN",
+    "languages": [
+      "EN"
+    ]
+  },
+  "AUS": {
+    "continent": "OC",
+    "zone": "PAC",
+    "languages": [
+      "EN"
+    ]
+  },
+  "AUT": {
+    "continent": "EU",
+    "zone": "CEU",
+    "languages": [
+      "DE"
+    ]
+  },
+  "AZE": {
+    "continent": "AS",
+    "zone": "SWA",
+    "languages": [
+      "AZ",
+      "HY"
+    ]
+  },
+  "BDI": {
+    "continent": "AF",
+    "zone": "CAF",
+    "languages": [
+      "FR",
+      "RN"
+    ]
+  },
+  "BEL": {
+    "continent": "EU",
+    "zone": "WEU",
+    "languages": [
+      "NL",
+      "FR",
+      "DE"
+    ]
+  },
+  "BEN": {
+    "continent": "AF",
+    "zone": "WAF",
+    "languages": [
+      "FR"
+    ]
+  },
+  "BFA": {
+    "continent": "AF",
+    "zone": "WAF",
+    "languages": [
+      "FR",
+      "FF"
+    ]
+  },
+  "BGD": {
+    "continent": "AS",
+    "zone": "SAS",
+    "languages": [
+      "BN"
+    ]
+  },
+  "BGR": {
+    "continent": "EU",
+    "zone": "SEE",
+    "languages": [
+      "BG"
+    ]
+  },
+  "BHR": {
+    "continent": "AS",
+    "zone": "SWA",
+    "languages": [
+      "AR"
+    ]
+  },
+  "BHS": {
+    "continent": "AM",
+    "zone": "WIN",
+    "languages": [
+      "EN"
+    ]
+  },
+  "BIH": {
+    "continent": "EU",
+    "zone": "SEE",
+    "languages": [
+      "BS",
+      "HR",
+      "SR"
+    ]
+  },
+  "BLR": {
+    "continent": "EU",
+    "zone": "EEU",
+    "languages": [
+      "BE",
+      "RU"
+    ]
+  },
+  "BLZ": {
+    "continent": "AM",
+    "zone": "CAM",
+    "languages": [
+      "EN",
+      "ES"
+    ]
+  },
+  "BMU": {
+    "continent": "AM",
+    "zone": "WIN",
+    "languages": [
+      "EN"
+    ]
+  },
+  "BOL": {
+    "continent": "AM",
+    "zone": "SAM",
+    "languages": [
+      "ES",
+      "AY",
+      "QU"
+    ]
+  },
+  "BRA": {
+    "continent": "AM",
+    "zone": "SAM",
+    "languages": [
+      "PT"
+    ]
+  },
+  "BRB": {
+    "continent": "AM",
+    "zone": "WIN",
+    "languages": [
+      "EN"
+    ]
+  },
+  "BRN": {
+    "continent": "AS",
+    "zone": "SEA",
+    "languages": [
+      "MS"
+    ]
+  },
+  "BTN": {
+    "continent": "AS",
+    "zone": "SAS",
+    "languages": [
+      "DZ"
+    ]
+  },
+  "BWA": {
+    "continent": "AF",
+    "zone": "SAF",
+    "languages": [
+      "EN",
+      "TN"
+    ]
+  },
+  "CAF": {
+    "continent": "AF",
+    "zone": "CAF",
+    "languages": [
+      "FR",
+      "SG"
+    ]
+  },
+  "CAN": {
+    "continent": "AM",
+    "zone": "NAM",
+    "languages": [
+      "EN",
+      "FR"
+    ]
+  },
+  "CCK": {
+    "continent": "AS",
+    "zone": "SEA",
+    "languages": [
+      "EN"
+    ]
+  },
+  "CHE": {
+    "continent": "EU",
+    "zone": "CEU",
+    "languages": [
+      "DE",
+      "FR",
+      "IT"
+    ]
+  },
+  "CHL": {
+    "continent": "AM",
+    "zone": "SAM",
+    "languages": [
+      "ES"
+    ]
+  },
+  "CHN": {
+    "continent": "AS",
+    "zone": "EAS",
+    "languages": [
+      "ZH"
+    ]
+  },
+  "CIV": {
+    "continent": "AF",
+    "zone": "WAF",
+    "languages": [
+      "FR"
+    ]
+  },
+  "CMR": {
+    "continent": "AF",
+    "zone": "WAF",
+    "languages": [
+      "EN",
+      "FR"
+    ]
+  },
+  "COG": {
+    "continent": "AF",
+    "zone": "CAF",
+    "languages": [
+      "FR",
+      "LN"
+    ]
+  },
+  "COK": {
+    "continent": "OC",
+    "zone": "PAC",
+    "languages": [
+      "EN"
+    ]
+  },
+  "COL": {
+    "continent": "AM",
+    "zone": "SAM",
+    "languages": [
+      "ES"
+    ]
+  },
+  "CPV": {
+    "continent": "AF",
+    "zone": "WAF",
+    "languages": [
+      "PT"
+    ]
+  },
+  "CRI": {
+    "continent": "AM",
+    "zone": "CAM",
+    "languages": [
+      "ES"
+    ]
+  },
+  "CUB": {
+    "continent": "AM",
+    "zone": "WIN",
+    "languages": [
+      "ES"
+    ]
+  },
+  "CXR": {
+    "continent": "AS",
+    "zone": "SEA",
+    "languages": [
+      "EN"
+    ]
+  },
+  "CYM": {
+    "continent": "AM",
+    "zone": "WIN",
+    "languages": [
+      "EN"
+    ]
+  },
+  "CYP": {
+    "continent": "AS",
+    "zone": "SWA",
+    "languages": [
+      "EL",
+      "TR",
+      "HY"
+    ]
+  },
+  "CZE": {
+    "continent": "EU",
+    "zone": "CEU",
+    "languages": [
+      "CS",
+      "SK"
+    ]
+  },
+  "DEU": {
+    "continent": "EU",
+    "zone": "WEU",
+    "languages": [
+      "DE"
+    ]
+  },
+  "DJI": {
+    "continent": "AF",
+    "zone": "EAF",
+    "languages": [
+      "FR",
+      "AR"
+    ]
+  },
+  "DMA": {
+    "continent": "AM",
+    "zone": "WIN",
+    "languages": [
+      "EN"
+    ]
+  },
+  "DNK": {
+    "continent": "EU",
+    "zone": "NEU",
+    "languages": [
+      "DA"
+    ]
+  },
+  "DOM": {
+    "continent": "AM",
+    "zone": "WIN",
+    "languages": [
+      "ES"
+    ]
+  },
+  "DZA": {
+    "continent": "AF",
+    "zone": "NAF",
+    "languages": [
+      "AR"
+    ]
+  },
+  "ECU": {
+    "continent": "AM",
+    "zone": "SAM",
+    "languages": [
+      "ES"
+    ]
+  },
+  "EGY": {
+    "continent": "AF",
+    "zone": "NAF",
+    "languages": [
+      "AR"
+    ]
+  },
+  "ERI": {
+    "continent": "AF",
+    "zone": "EAF",
+    "languages": [
+      "TI",
+      "AR",
+      "EN"
+    ]
+  },
+  "ESH": {
+    "continent": "AF",
+    "zone": "NAF",
+    "languages": [
+      "ES"
+    ]
+  },
+  "ESP": {
+    "continent": "EU",
+    "zone": "SWE",
+    "languages": [
+      "ES"
+    ]
+  },
+  "EST": {
+    "continent": "EU",
+    "zone": "EEU",
+    "languages": [
+      "ET"
+    ]
+  },
+  "ETH": {
+    "continent": "AF",
+    "zone": "EAF",
+    "languages": [
+      "AM"
+    ]
+  },
+  "FIN": {
+    "continent": "EU",
+    "zone": "NEU",
+    "languages": [
+      "FI",
+      "SV"
+    ]
+  },
+  "FJI": {
+    "continent": "OC",
+    "zone": "PAC",
+    "languages": [
+      "EN",
+      "FJ",
+      "HI",
+      "UR"
+    ]
+  },
+  "FLK": {
+    "continent": "AM",
+    "zone": "SAM",
+    "languages": [
+      "EN"
+    ]
+  },
+  "FRA": {
+    "continent": "EU",
+    "zone": "WEU",
+    "languages": [
+      "FR"
+    ]
+  },
+  "FRO": {
+    "continent": "EU",
+    "zone": "NEU",
+    "languages": [
+      "FO"
+    ]
+  },
+  "FSM": {
+    "continent": "OC",
+    "zone": "PAC",
+    "languages": [
+      "EN"
+    ]
+  },
+  "GAB": {
+    "continent": "AF",
+    "zone": "WAF",
+    "languages": [
+      "FR"
+    ]
+  },
+  "GBR": {
+    "continent": "EU",
+    "zone": "WEU",
+    "languages": [
+      "EN"
+    ]
+  },
+  "GEO": {
+    "continent": "AS",
+    "zone": "SWA",
+    "languages": [
+      "KA"
+    ]
+  },
+  "GGY": {
+    "continent": "EU",
+    "zone": "WEU",
+    "languages": [
+      "EN",
+      "FR"
+    ]
+  },
+  "GHA": {
+    "continent": "AF",
+    "zone": "WAF",
+    "languages": [
+      "EN"
+    ]
+  },
+  "GIB": {
+    "continent": "EU",
+    "zone": "SWE",
+    "languages": [
+      "EN"
+    ]
+  },
+  "GIN": {
+    "continent": "AF",
+    "zone": "WAF",
+    "languages": [
+      "FR",
+      "FF"
+    ]
+  },
+  "GLP": {
+    "continent": "AM",
+    "zone": "WIN",
+    "languages": [
+      "FR"
+    ]
+  },
+  "GMB": {
+    "continent": "AF",
+    "zone": "WAF",
+    "languages": [
+      "EN"
+    ]
+  },
+  "GNB": {
+    "continent": "AF",
+    "zone": "WAF",
+    "languages": [
+      "PT"
+    ]
+  },
+  "GNQ": {
+    "continent": "AF",
+    "zone": "WAF",
+    "languages": [
+      "ES",
+      "FR"
+    ]
+  },
+  "GRC": {
+    "continent": "EU",
+    "zone": "SEE",
+    "languages": [
+      "EL"
+    ]
+  },
+  "GRD": {
+    "continent": "AM",
+    "zone": "WIN",
+    "languages": [
+      "EN"
+    ]
+  },
+  "GRL": {
+    "continent": "AM",
+    "zone": "NAM",
+    "languages": [
+      "KL"
+    ]
+  },
+  "GTM": {
+    "continent": "AM",
+    "zone": "CAM",
+    "languages": [
+      "ES"
+    ]
+  },
+  "GUF": {
+    "continent": "AM",
+    "zone": "SAM",
+    "languages": [
+      "FR"
+    ]
+  },
+  "GUM": {
+    "continent": "OC",
+    "zone": "PAC",
+    "languages": [
+      "EN",
+      "CH",
+      "ES"
+    ]
+  },
+  "GUY": {
+    "continent": "AM",
+    "zone": "SAM",
+    "languages": [
+      "EN"
+    ]
+  },
+  "HND": {
+    "continent": "AM",
+    "zone": "CAM",
+    "languages": [
+      "ES"
+    ]
+  },
+  "HRV": {
+    "continent": "EU",
+    "zone": "SEE",
+    "languages": [
+      "HR"
+    ]
+  },
+  "HTI": {
+    "continent": "AM",
+    "zone": "WIN",
+    "languages": [
+      "FR",
+      "HT"
+    ]
+  },
+  "HUN": {
+    "continent": "EU",
+    "zone": "CEU",
+    "languages": [
+      "HU"
+    ]
+  },
+  "IDN": {
+    "continent": "AS",
+    "zone": "SEA",
+    "languages": [
+      "ID"
+    ]
+  },
+  "IMN": {
+    "continent": "EU",
+    "zone": "WEU",
+    "languages": [
+      "EN",
+      "GV"
+    ]
+  },
+  "IND": {
+    "continent": "AS",
+    "zone": "SAS",
+    "languages": [
+      "HI",
+      "EN"
+    ]
+  },
+  "IRL": {
+    "continent": "EU",
+    "zone": "WEU",
+    "languages": [
+      "GA",
+      "EN"
+    ]
+  },
+  "IRN": {
+    "continent": "AS",
+    "zone": "SWA",
+    "languages": [
+      "FA"
+    ]
+  },
+  "IRQ": {
+    "continent": "AS",
+    "zone": "SWA",
+    "languages": [
+      "AR",
+      "KU"
+    ]
+  },
+  "ISL": {
+    "continent": "EU",
+    "zone": "NEU",
+    "languages": [
+      "IS"
+    ]
+  },
+  "ISR": {
+    "continent": "AS",
+    "zone": "SWA",
+    "languages": [
+      "HE",
+      "AR"
+    ]
+  },
+  "ITA": {
+    "continent": "EU",
+    "zone": "SEU",
+    "languages": [
+      "IT"
+    ]
+  },
+  "JAM": {
+    "continent": "AM",
+    "zone": "WIN",
+    "languages": [
+      "EN"
+    ]
+  },
+  "JEY": {
+    "continent": "EU",
+    "zone": "WEU",
+    "languages": [
+      "EN",
+      "FR"
+    ]
+  },
+  "JOR": {
+    "continent": "AS",
+    "zone": "SWA",
+    "languages": [
+      "AR"
+    ]
+  },
+  "JPN": {
+    "continent": "AS",
+    "zone": "EAS",
+    "languages": [
+      "JA"
+    ]
+  },
+  "KAZ": {
+    "continent": "AS",
+    "zone": "CAS",
+    "languages": [
+      "KK",
+      "RU"
+    ]
+  },
+  "KEN": {
+    "continent": "AF",
+    "zone": "EAF",
+    "languages": [
+      "EN",
+      "SW"
+    ]
+  },
+  "KGZ": {
+    "continent": "AS",
+    "zone": "CAS",
+    "languages": [
+      "KY",
+      "RU"
+    ]
+  },
+  "KHM": {
+    "continent": "AS",
+    "zone": "SEA",
+    "languages": [
+      "KM"
+    ]
+  },
+  "KIR": {
+    "continent": "OC",
+    "zone": "PAC",
+    "languages": [
+      "EN"
+    ]
+  },
+  "KNA": {
+    "continent": "AM",
+    "zone": "WIN",
+    "languages": [
+      "EN"
+    ]
+  },
+  "KOR": {
+    "continent": "AS",
+    "zone": "EAS",
+    "languages": [
+      "KO"
+    ]
+  },
+  "KWT": {
+    "continent": "AS",
+    "zone": "SWA",
+    "languages": [
+      "AR"
+    ]
+  },
+  "LAO": {
+    "continent": "AS",
+    "zone": "SEA",
+    "languages": [
+      "LO"
+    ]
+  },
+  "LBN": {
+    "continent": "AS",
+    "zone": "SWA",
+    "languages": [
+      "AR",
+      "FR"
+    ]
+  },
+  "LBR": {
+    "continent": "AF",
+    "zone": "WAF",
+    "languages": [
+      "EN"
+    ]
+  },
+  "LBY": {
+    "continent": "AF",
+    "zone": "NAF",
+    "languages": [
+      "AR"
+    ]
+  },
+  "LCA": {
+    "continent": "AM",
+    "zone": "WIN",
+    "languages": [
+      "EN"
+    ]
+  },
+  "LIE": {
+    "continent": "EU",
+    "zone": "CEU",
+    "languages": [
+      "DE"
+    ]
+  },
+  "LKA": {
+    "continent": "AS",
+    "zone": "SAS",
+    "languages": [
+      "SI",
+      "TA"
+    ]
+  },
+  "LSO": {
+    "continent": "AF",
+    "zone": "SAF",
+    "languages": [
+      "EN",
+      "ST"
+    ]
+  },
+  "LTU": {
+    "continent": "EU",
+    "zone": "EEU",
+    "languages": [
+      "LT"
+    ]
+  },
+  "LUX": {
+    "continent": "EU",
+    "zone": "WEU",
+    "languages": [
+      "FR",
+      "DE",
+      "LB"
+    ]
+  },
+  "LVA": {
+    "continent": "EU",
+    "zone": "EEU",
+    "languages": [
+      "LV"
+    ]
+  },
+  "MAR": {
+    "continent": "AF",
+    "zone": "NAF",
+    "languages": [
+      "AR"
+    ]
+  },
+  "MCO": {
+    "continent": "EU",
+    "zone": "WEU",
+    "languages": [
+      "FR"
+    ]
+  },
+  "MDA": {
+    "continent": "EU",
+    "zone": "EEU",
+    "languages": [
+      "RO"
+    ]
+  },
+  "MDV": {
+    "continent": "AS",
+    "zone": "SAS",
+    "languages": [
+      "DV"
+    ]
+  },
+  "MEX": {
+    "continent": "AM",
+    "zone": "CAM",
+    "languages": [
+      "ES"
+    ]
+  },
+  "MHL": {
+    "continent": "OC",
+    "zone": "PAC",
+    "languages": [
+      "EN",
+      "MH"
+    ]
+  },
+  "MKD": {
+    "continent": "EU",
+    "zone": "SEE",
+    "languages": [
+      "MK"
+    ]
+  },
+  "MLI": {
+    "continent": "AF",
+    "zone": "WAF",
+    "languages": [
+      "FR"
+    ]
+  },
+  "MLT": {
+    "continent": "EU",
+    "zone": "SEU",
+    "languages": [
+      "MT",
+      "EN"
+    ]
+  },
+  "MNG": {
+    "continent": "AS",
+    "zone": "NAS",
+    "languages": [
+      "MN"
+    ]
+  },
+  "MNP": {
+    "continent": "OC",
+    "zone": "PAC",
+    "languages": [
+      "EN",
+      "CH"
+    ]
+  },
+  "MOZ": {
+    "continent": "AF",
+    "zone": "SAF",
+    "languages": [
+      "PT"
+    ]
+  },
+  "MRT": {
+    "continent": "AF",
+    "zone": "WAF",
+    "languages": [
+      "AR"
+    ]
+  },
+  "MSR": {
+    "continent": "AM",
+    "zone": "WIN",
+    "languages": [
+      "EN"
+    ]
+  },
+  "MTQ": {
+    "continent": "AM",
+    "zone": "WIN",
+    "languages": [
+      "FR"
+    ]
+  },
+  "MWI": {
+    "continent": "AF",
+    "zone": "SAF",
+    "languages": [
+      "EN",
+      "NY"
+    ]
+  },
+  "MYS": {
+    "continent": "AS",
+    "zone": "SEA",
+    "languages": []
+  },
+  "NAM": {
+    "continent": "AF",
+    "zone": "SAF",
+    "languages": [
+      "EN",
+      "AF"
+    ]
+  },
+  "NCL": {
+    "continent": "OC",
+    "zone": "PAC",
+    "languages": [
+      "FR"
+    ]
+  },
+  "NER": {
+    "continent": "AF",
+    "zone": "WAF",
+    "languages": [
+      "FR"
+    ]
+  },
+  "NFK": {
+    "continent": "OC",
+    "zone": "PAC",
+    "languages": [
+      "EN"
+    ]
+  },
+  "NGA": {
+    "continent": "AF",
+    "zone": "WAF",
+    "languages": [
+      "EN"
+    ]
+  },
+  "NIC": {
+    "continent": "AM",
+    "zone": "CAM",
+    "languages": [
+      "ES"
+    ]
+  },
+  "NIU": {
+    "continent": "OC",
+    "zone": "PAC",
+    "languages": [
+      "EN"
+    ]
+  },
+  "NLD": {
+    "continent": "EU",
+    "zone": "WEU",
+    "languages": [
+      "NL"
+    ]
+  },
+  "NOR": {
+    "continent": "EU",
+    "zone": "NEU",
+    "languages": [
+      "NO",
+      "NB",
+      "NN"
+    ]
+  },
+  "NPL": {
+    "continent": "AS",
+    "zone": "SAS",
+    "languages": [
+      "NE"
+    ]
+  },
+  "NRU": {
+    "continent": "OC",
+    "zone": "PAC",
+    "languages": [
+      "EN",
+      "NA"
+    ]
+  },
+  "NZL": {
+    "continent": "OC",
+    "zone": "PAC",
+    "languages": [
+      "EN",
+      "MI"
+    ]
+  },
+  "OMN": {
+    "continent": "AS",
+    "zone": "SWA",
+    "languages": [
+      "AR"
+    ]
+  },
+  "PAK": {
+    "continent": "AS",
+    "zone": "SAS",
+    "languages": [
+      "EN",
+      "UR"
+    ]
+  },
+  "PAN": {
+    "continent": "AM",
+    "zone": "CAM",
+    "languages": [
+      "ES"
+    ]
+  },
+  "PCN": {
+    "continent": "OC",
+    "zone": "PAC",
+    "languages": [
+      "EN"
+    ]
+  },
+  "PER": {
+    "continent": "AM",
+    "zone": "SAM",
+    "languages": [
+      "ES"
+    ]
+  },
+  "PHL": {
+    "continent": "AS",
+    "zone": "SEA",
+    "languages": [
+      "EN"
+    ]
+  },
+  "PLW": {
+    "continent": "OC",
+    "zone": "PAC",
+    "languages": [
+      "EN"
+    ]
+  },
+  "PNG": {
+    "continent": "OC",
+    "zone": "PAC",
+    "languages": [
+      "EN"
+    ]
+  },
+  "POL": {
+    "continent": "EU",
+    "zone": "EEU",
+    "languages": [
+      "PL"
+    ]
+  },
+  "PRI": {
+    "continent": "AM",
+    "zone": "WIN",
+    "languages": [
+      "ES",
+      "EN"
+    ]
+  },
+  "PRK": {
+    "continent": "AS",
+    "zone": "EAS",
+    "languages": [
+      "KO"
+    ]
+  },
+  "PRT": {
+    "continent": "EU",
+    "zone": "SWE",
+    "languages": [
+      "PT"
+    ]
+  },
+  "PRY": {
+    "continent": "AM",
+    "zone": "SAM",
+    "languages": [
+      "ES",
+      "GN"
+    ]
+  },
+  "PYF": {
+    "continent": "OC",
+    "zone": "PAC",
+    "languages": [
+      "FR"
+    ]
+  },
+  "QAT": {
+    "continent": "AS",
+    "zone": "SWA",
+    "languages": [
+      "AR"
+    ]
+  },
+  "RUS": {
+    "continent": "AS",
+    "zone": "NAS",
+    "languages": [
+      "RU"
+    ]
+  },
+  "RWA": {
+    "continent": "AF",
+    "zone": "CAF",
+    "languages": [
+      "RW",
+      "EN",
+      "FR"
+    ]
+  },
+  "SAU": {
+    "continent": "AS",
+    "zone": "SWA",
+    "languages": [
+      "AR"
+    ]
+  },
+  "SDN": {
+    "continent": "AF",
+    "zone": "NAF",
+    "languages": [
+      "AR",
+      "EN"
+    ]
+  },
+  "SEN": {
+    "continent": "AF",
+    "zone": "WAF",
+    "languages": [
+      "FR"
+    ]
+  },
+  "SGP": {
+    "continent": "AS",
+    "zone": "SEA",
+    "languages": [
+      "EN",
+      "MS",
+      "TA",
+      "ZH"
+    ]
+  },
+  "SJM": {
+    "continent": "EU",
+    "zone": "NEU",
+    "languages": [
+      "NO"
+    ]
+  },
+  "SLB": {
+    "continent": "OC",
+    "zone": "PAC",
+    "languages": [
+      "EN"
+    ]
+  },
+  "SLE": {
+    "continent": "AF",
+    "zone": "WAF",
+    "languages": [
+      "EN"
+    ]
+  },
+  "SLV": {
+    "continent": "AM",
+    "zone": "CAM",
+    "languages": [
+      "ES"
+    ]
+  },
+  "SMR": {
+    "continent": "EU",
+    "zone": "SEU",
+    "languages": [
+      "IT"
+    ]
+  },
+  "SOM": {
+    "continent": "AF",
+    "zone": "EAF",
+    "languages": [
+      "SO",
+      "AR"
+    ]
+  },
+  "SPM": {
+    "continent": "AM",
+    "zone": "NAM",
+    "languages": [
+      "FR"
+    ]
+  },
+  "STP": {
+    "continent": "AF",
+    "zone": "WAF",
+    "languages": [
+      "PT"
+    ]
+  },
+  "SUR": {
+    "continent": "AM",
+    "zone": "SAM",
+    "languages": [
+      "NL"
+    ]
+  },
+  "SVK": {
+    "continent": "EU",
+    "zone": "CEU",
+    "languages": [
+      "SK"
+    ]
+  },
+  "SVN": {
+    "continent": "EU",
+    "zone": "SEE",
+    "languages": [
+      "SL"
+    ]
+  },
+  "SWE": {
+    "continent": "EU",
+    "zone": "NEU",
+    "languages": [
+      "SV"
+    ]
+  },
+  "SWZ": {
+    "continent": "AF",
+    "zone": "SAF",
+    "languages": [
+      "EN",
+      "SS"
+    ]
+  },
+  "SYR": {
+    "continent": "AS",
+    "zone": "SWA",
+    "languages": [
+      "AR"
+    ]
+  },
+  "TCD": {
+    "continent": "AF",
+    "zone": "CAF",
+    "languages": [
+      "FR",
+      "AR"
+    ]
+  },
+  "TGO": {
+    "continent": "AF",
+    "zone": "WAF",
+    "languages": [
+      "FR"
+    ]
+  },
+  "THA": {
+    "continent": "AS",
+    "zone": "SEA",
+    "languages": [
+      "TH"
+    ]
+  },
+  "TJK": {
+    "continent": "AS",
+    "zone": "CAS",
+    "languages": [
+      "TG",
+      "RU"
+    ]
+  },
+  "TKL": {
+    "continent": "OC",
+    "zone": "PAC",
+    "languages": [
+      "EN"
+    ]
+  },
+  "TKM": {
+    "continent": "AS",
+    "zone": "CAS",
+    "languages": [
+      "TK",
+      "RU"
+    ]
+  },
+  "TON": {
+    "continent": "OC",
+    "zone": "PAC",
+    "languages": [
+      "EN",
+      "TO"
+    ]
+  },
+  "TTO": {
+    "continent": "AM",
+    "zone": "WIN",
+    "languages": [
+      "EN"
+    ]
+  },
+  "TUN": {
+    "continent": "AF",
+    "zone": "NAF",
+    "languages": [
+      "AR"
+    ]
+  },
+  "TUR": {
+    "continent": "AS",
+    "zone": "SWA",
+    "languages": [
+      "TR"
+    ]
+  },
+  "TUV": {
+    "continent": "OC",
+    "zone": "PAC",
+    "languages": [
+      "EN"
+    ]
+  },
+  "TWN": {
+    "continent": "AS",
+    "zone": "EAS",
+    "languages": [
+      "ZH"
+    ]
+  },
+  "TZA": {
+    "continent": "AF",
+    "zone": "EAF",
+    "languages": [
+      "SW",
+      "EN"
+    ]
+  },
+  "UGA": {
+    "continent": "AF",
+    "zone": "EAF",
+    "languages": [
+      "EN",
+      "SW"
+    ]
+  },
+  "UKR": {
+    "continent": "EU",
+    "zone": "EEU",
+    "languages": [
+      "UK"
+    ]
+  },
+  "URY": {
+    "continent": "AM",
+    "zone": "SAM",
+    "languages": [
+      "ES"
+    ]
+  },
+  "USA": {
+    "continent": "AM",
+    "zone": "NAM",
+    "languages": [
+      "EN"
+    ]
+  },
+  "UZB": {
+    "continent": "AS",
+    "zone": "CAS",
+    "languages": [
+      "UZ",
+      "RU"
+    ]
+  },
+  "VCT": {
+    "continent": "AM",
+    "zone": "WIN",
+    "languages": [
+      "EN"
+    ]
+  },
+  "VEN": {
+    "continent": "AM",
+    "zone": "SAM",
+    "languages": [
+      "ES"
+    ]
+  },
+  "VNM": {
+    "continent": "AS",
+    "zone": "SEA",
+    "languages": [
+      "VI"
+    ]
+  },
+  "VUT": {
+    "continent": "OC",
+    "zone": "PAC",
+    "languages": [
+      "BI",
+      "EN",
+      "FR"
+    ]
+  },
+  "WLF": {
+    "continent": "OC",
+    "zone": "PAC",
+    "languages": [
+      "FR"
+    ]
+  },
+  "WSM": {
+    "continent": "OC",
+    "zone": "PAC",
+    "languages": [
+      "SM",
+      "EN"
+    ]
+  },
+  "YEM": {
+    "continent": "AS",
+    "zone": "SWA",
+    "languages": [
+      "AR"
+    ]
+  },
+  "ZAF": {
+    "continent": "AF",
+    "zone": "SAF",
+    "languages": [
+      "AF",
+      "EN",
+      "NR",
+      "ST",
+      "SS",
+      "TN",
+      "TS",
+      "VE",
+      "XH",
+      "ZU"
+    ]
+  },
+  "ZWE": {
+    "continent": "AF",
+    "zone": "SAF",
+    "languages": [
+      "EN",
+      "SN",
+      "ND"
+    ]
+  }
+}
