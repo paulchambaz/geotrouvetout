@@ -10,11 +10,11 @@ import csv
 
 
 def get_country_areas() -> dict[str, float]:
-    """
-    Load a dictionary that contains area data for each country.
+    """! Load a dictionary that contains area data for each country.
 
     @return A dictionary with 3 letter country code as keys and their
     respective areas as values.
+
     @throw IOError If the CSV file with the area data cannot be found or
     opened.
     @throw ValueError If the CSV file has invalid data for the area value.

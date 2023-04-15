@@ -2,23 +2,22 @@
 
 import sys
 import argparse
-import logging
 import pathlib
 import uvicorn
 import coloredlogs
 import geotrouvetout
-import numpy
-import matplotlib.image as mimg
 import pycountry
 from PIL import Image
-import cv2
+from rich_argparse import RichHelpFormatter
 
 # argument parsing
-
-
 def main():
+    """
+    Main program entry.
+    """
     parser = argparse.ArgumentParser(
-        description="Get information about an image geolocation"
+        description="Get information about an image geolocation",
+        formatter_class=RichHelpFormatter,
     )
 
     parser.add_argument(
@@ -54,7 +53,6 @@ def main():
         log_level = "DEBUG"
 
     # initiate subsystems
-    # TODO - use environement variables to pass debug level
     coloredlogs.install(
         level=log_level,
         fmt="%(levelname)s: %(asctime)s %(message)s",
@@ -79,13 +77,15 @@ def main():
             parser.print_usage()
             sys.exit(1)
 
+        # geotrouvetout.get_location_data(45.765, 6.218)
+
         image = Image.open(image_file)
         country_probs = geotrouvetout.get_country(image)
-
+        
         sorted_country_probs = sorted(
             country_probs.items(), key=lambda x: x[1], reverse=True
         )
-
+        
         for country, prob in sorted_country_probs:
             percent_prob = int(prob * 100)
             if not percent_prob == 0:

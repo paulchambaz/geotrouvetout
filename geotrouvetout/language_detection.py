@@ -1,59 +1,66 @@
 """
-This file contains functions for detecting languages in an image that contain
-road signs
+Module.
+
+Module.
 """
 
 import logging
+from collections import defaultdict
 import numpy as np
 import numpy.typing as npt
-import math
-import tkinter
-import matplotlib.pyplot as mplt
 import cv2
 import pytesseract
 from langdetect import detect_langs
-from collections import defaultdict
-import pycountry
 from PIL import Image
-import pandas as pd
 from ultralytics import YOLO
+from typing import Any
 
 
-def get_languages(image: Image) -> dict[str, float]:
+def get_languages(image: Image.Image) -> dict[str, float]:
     """
-    Detect languages in an image
-    @param image The image to detect the languages in
-    @return list of tuple that contain a language code and the confidence level
+    Get information about language present in an image.
+
+    Returns a dictionary with the detected languages in the given image and
+    their average confidence.
+
+    @param image PIL Image object representing the image to be analyzed
+    @return A dictionary with the detected languages and their average
+    confidence in the image. They keys are 2 letter language codes and the
+    values are between 0 and 1.
     """
     logging.info("get_languages")
-    logging.getLogger("yolov8").setLevel(logging.WARNING)
 
-    # get the images from yolo
+    # detect road signs in the image using YOLO
     detected_signs = detect_road_signs(image)
 
-    detected_languages_total_conf = {}
-    detected_languages_count = {}
+    # initialize dictionaries to keep track of total confidence of count for
+    # each detected language
+    detected_languages_total_conf: dict[str, float] = {}
+    detected_languages_count: dict[str, int] = {}
 
     logging.info(
-        f"{len(detected_signs)} images of road signs detected, starting analysis"
+        f"{len(detected_signs)} images of road signs detected, \
+starting analysis"
     )
 
+    # iterate through each detected sign and analyze the text in each
     for sign_image in detected_signs:
         try:
-            # process the image
+            # process the sign image to prepare it for text detection
             processed_image = process_image(sign_image)
 
-            # detect text and confidences in the image
+            # detect text and confidences in the processed image
             text_and_confidences = detect_text(processed_image)
 
-            # log the text detected
-            for text, conf in text_and_confidences:
+            # log the text detected for debugging purposes
+            for text, conf in text_and_confidences.items():
                 logging.info(f"Text detected : {text}, {int(conf)}%")
 
-            # detect languages in the text and confidence
+            # detect the languages in the text and their respective confidences
             language_detected = detect_languages(text_and_confidences)
 
-            # combine the detected languages and compute the total confidence and count
+            # combine the detected languages and compute the toatl confidence
+            # and count for each
             for lang, conf in language_detected.items():
                 if lang in detected_languages_total_conf:
                     detected_languages_total_conf[lang] += conf
@@ -64,6 +71,7 @@ def get_languages(image: Image) -> dict[str, float]:
         except ValueError as e:
             logging.info(e)
 
+    # calculate the average confidence for each detected language
     detected_languages_avg_conf = {}
     for lang, total_conf in detected_languages_total_conf.items():
         detected_languages_avg_conf[lang] = (
@@ -73,25 +81,26 @@ def get_languages(image: Image) -> dict[str, float]:
     return detected_languages_avg_conf
 
 
-def detect_road_signs(image: Image) -> list[npt.NDArray[np.uint8]]:
+def detect_road_signs(image: Image.Image) -> list[npt.NDArray[np.uint8]]:
     """
-    Detect road signs in an image using YOLO and return the cropped images
-    @param image PIL Image
-    @return list of cropped road sign np images detected in the image
-    """
-    yolo_logger = logging.getLogger("yolov8")
-    yolo_logger.setLevel(logging.ERROR)
+    Get list of road signs image present on the image.
 
+    Detects road signs in an input image and crops the image around each
+    detected sign.
+
+    @param image An input image to detect road signs from.
+    @return A list of cropped image containing a detected road sign.
+    """
+    logging.info("detect_road_signs")
+
+    # load YOLO model and set confidence threshold
     model = YOLO("weights/traffic_sign.pt")
-
     model.conf = 0.25
-    model.iou = 0.45
-    model.agnostic = False
-    model.multi_label = False
-    model.max_det = 1000
 
+    # detect road signs in the image
     results = model(image)
 
+    # crop each sign into its own image
     cropped_images = []
     for result in results:
         for box in result.boxes:
@@ -106,87 +115,239 @@ def detect_road_signs(image: Image) -> list[npt.NDArray[np.uint8]]:
 
 def process_image(image: npt.NDArray[np.uint8]) -> npt.NDArray[np.uint8]:
     """
-    Preprocess image for text detection by cleaning and enhancing it
-    @param image file path
-    @return preprocessed image file paths
+    Process a road sign image for text detection and recognition.
+
+    Processes the input image using a series of image processing techniques to
+    isolate the text and remove background noise. Resulting image is always
+    black text on white black background.
+
+    @param image A numpy array representing the image to be processed.
+    @return A numpty array reprensenting the image with isolated text.
     """
+    # TODO: this still needs to be fixed for mypy
     logging.info("preprocess_images")
 
-    logging.debug("Converting to grayscale")
+    # stretched_image
+    stretched_image = first_process(image)
+    cv2.imwrite("img/1.png", stretched_image)
+
+    # get edges
+    edges = get_edges(stretched_image)
+
+    # get large connected component image
+    component_image = get_component_images(edges)
+
+    # get contour for shape approximation
+    contour_image = get_contour(component_image)
+
+    # compute polygon for shape
+    try:
+        quad = compute_polygon(contour_image)
+
+        # correct perspective
+        warped_image, warped_background = correct_perspective(
+            stretched_image, component_image, quad
+        )
+
+        # final processing to clean up the image
+        final = final_process(warped_image, warped_background)
+
+        return final
+
+    except ValueError as e:
+        raise e
+
+
+def first_process(image: npt.NDArray[np.uint8]) -> npt.NDArray[np.float32]:
+    """
+    Convert an image to grayscale and stretch the pixel intensity from 0 to 1.
+
+    @param image The numpy image.
+    @return A numpy image for the stretched grayscaled image.
+    """
+    logging.info("first_process")
+
+    # convert to grayscale
     gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+
+    # convert to float32
     gray = gray.astype(np.float32) / 255.0
-    min_val, max_val = cv2.minMaxLoc(gray)[:2]
+
+    # stretch image
     stretched_image = cv2.normalize(
         gray, None, 0.0, 1.0, cv2.NORM_MINMAX, dtype=cv2.CV_32F
     )
 
-    logging.debug("Applying blur")
-    blurred = cv2.GaussianBlur(stretched_image, (5, 5), 1.4)
+    # assert isinstance(stretched_image, np.ndarray) and stretched_image.dtype == np.float32, "filled must be of type ndarray[Any, dtype[floating[_32Bit]]]"
 
-    logging.debug("Computing gradient")
+    return stretched_image
+
+
+def get_edges(image: npt.NDArray[np.float32]) -> npt.NDArray[np.float32]:
+    """
+    Apply a blur to an image and compute its edges.
+
+    @param image A numpy image.
+    @return A numpy image representing the binary edges of the image.
+    """
+    logging.info("get_edges")
+
+    # apply blur
+    blurred = cv2.GaussianBlur(image, (5, 5), 1.4)
+
+    # compute gradient
     gx = cv2.Sobel(blurred, cv2.CV_64F, 1, 0, ksize=3)
     gy = cv2.Sobel(blurred, cv2.CV_64F, 0, 1, ksize=3)
     gradient = cv2.magnitude(gx, gy)
 
-    logging.debug("Getting inverted binary")
+    # get inverted binary
     _, binary_image = cv2.threshold(gradient, 0.1, 1.0, cv2.THRESH_BINARY)
+    inverted_image = np.zeros_like(binary_image, dtype=np.float32)
+    inverted_image = 1.0 - binary_image
 
-    inverted_image = np.zeros_like(binary_image)
-    inverted_image = 1 - binary_image
+    return inverted_image
 
-    logging.debug("Getting connected component")
-    inverted_image = (inverted_image * 255).astype("uint8")
+
+def get_component_images(
+    image: npt.NDArray[np.float32],
+) -> npt.NDArray[np.uint8]:
+    """
+    Get the large connected component image.
+
+    Get the connected components of an image and return the large connected
+    components as a binary image.
+
+    @param image A numpy image.
+    @return A numpy image representing the large connected components as a
+    binary image.
+    """
+    # get connected component
+    logging.debug("get_component_images")
+
+    # convert to uint8 as it is the required format for connected components
+    inverted_image = (image * 255).astype(np.uint8)
+
+    # get the connected components
     _, labels, stats, _ = cv2.connectedComponentsWithStats(inverted_image)
 
-    stats = [(i,) + tuple(stats[i]) for i in range(len(stats))]
+    # ensure stats is a list of tuples of integers
+    # assert isinstance(stats, np.ndarray)
+    # assert stats.ndim == 2
+    # assert stats.shape[1] >= 5
+    stats = stats.tolist()
+    stats = [(i,) + tuple(x) for i, x in enumerate(stats)]
 
+    # sort connected component
     stats = sorted(
         stats[1:], key=lambda x: x[cv2.CC_STAT_AREA + 1], reverse=True
     )
 
+    # find largest connected component
     largest_area = stats[0][cv2.CC_STAT_AREA + 1]
 
-    logging.debug("Finding all large components to create component image")
-    component_image = np.zeros_like(inverted_image)
+    # create new connected component image that contain all connected component
+    # bigger than 50% of the biggest
+    component_image = np.zeros_like(inverted_image, dtype=np.uint8)
     for stat in stats:
         label = stat[0]
         area = stat[cv2.CC_STAT_AREA + 1]
         if area >= largest_area * 0.5:
             component_image[labels == label] = 255
 
-    logging.debug("Filling small holes")
+    # find small holes
     kernel = np.ones((5, 5), np.uint8)
-    filled = cv2.morphologyEx(component_image, cv2.MORPH_CLOSE, kernel)
-
+    filled = cv2.morphologyEx(image, cv2.MORPH_CLOSE, kernel)
     filled = fill_holes(filled)
 
+    # assert for type safety
+    # assert isinstance(filled, np.ndarray) and filled.dtype == np.uint8, "filled must be of type ndarray[Any, dtype[unsignedinteger[_8Bit]]]"
+
+    return component_image
+
+
+def get_contour(image: npt.NDArray[np.uint8]) -> npt.NDArray[np.uint8]:
+    """
+    Find the contour of the largest connected component in an image.
+
+    @param image A numpy image.
+    @return A numpy representing the contour of the largest connected component
+    in the image.
+    """
+    logging.info("get_contour")
+
+    # find countour of filled shape to correct perspective
     logging.debug("Finding contour of filled shape to correct pespective")
     contours, _ = cv2.findContours(
-        filled, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE
+        image, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE
     )
-    largest_countour = max(contours, key=cv2.contourArea)
+    largest_contour = max(contours, key=cv2.contourArea)
 
-    logging.debug("Approximating shape to polygon")
+    # assert for type safety
+    # assert isinstance(largest_contour, np.ndarray) and largest_contour.dtype == np.uint8, "filled must be of type ndarray[Any, dtype[unsignedinteger[_8Bit]]]"
 
+    return largest_contour
+
+
+def compute_polygon(contour: npt.NDArray[np.uint8]) -> npt.NDArray[Any]:
+    """
+    Approximate the contour of a shape to a quad.
+
+    Approximate the contour of the large connected components in an image with
+    a quad.
+
+    @param contour A numpy image representing a contour.
+    @raise ValueError If the function fails to approximate the contour with a
+    quad.
+    @return A numpy array representing a quad approximating the input contour.
+    """
+    logging.info("compute_polygon")
+
+    # initializes variable used for the approximation
     approx_quad = None
     max_iterations = 10
     iteration = 0
+
+    # try to create a quand until we cant
     while (
         approx_quad is None or len(approx_quad) != 4
     ) and iteration < max_iterations:
-        epsilon = (
-            (iteration + 1) * 0.01 * cv2.arcLength(largest_countour, True)
-        )
-        approx_quad = cv2.approxPolyDP(largest_countour, epsilon, True)
+        epsilon = (iteration + 1) * 0.01 * cv2.arcLength(contour, True)
+        approx_quad = cv2.approxPolyDP(contour, epsilon, True)
         iteration += 1
 
+    # if we have not been able to create a quad then we give up
     if approx_quad is None or len(approx_quad) != 4:
         raise ValueError("Failed to approximate polygon with 4 vertices.")
 
-    logging.debug("Correcting perspective")
-    src_pts = approx_quad.reshape(4, 2).astype(np.float32)
+    # assert for type safety
+    # assert isinstance(approx_quad, np.ndarray)
+    # assert isinstance(filled, np.ndarray) and filled.dtype == np.uint8, "filled must be of type ndarray[Any, dtype[unsignedinteger[_8Bit]]]"
 
-    src_pts_ordered = np.zeros_like(src_pts)
+    return approx_quad
+
+
+def correct_perspective(
+    image: npt.NDArray[np.float32],
+    component_image: npt.NDArray[np.uint8],
+    quad: npt.NDArray[Any],
+) -> tuple[npt.NDArray[np.uint8], npt.NDArray[np.uint8]]:
+    """
+    Correct perspective of the image based on its corners.
+
+    @param image An imput image to correct the perspective of.
+    @param component_image A binary image where the connected components should
+    be 255.
+    @param quad A set of four points representing the corners of a quad.
+    @return A tuple with two elements - the corrected input image and the
+    correct component image.
+    """
+    logging.info("correct_perspective")
+
+    # organize data for correction
+    src_pts = quad.reshape(4, 2).astype(np.float32)
+
+    # order points
+    src_pts_ordered = np.zeros_like(src_pts, dtype=np.float32)
     s = src_pts.sum(axis=1)
     src_pts_ordered[0] = src_pts[np.argmin(s)]
     src_pts_ordered[2] = src_pts[np.argmax(s)]
@@ -194,15 +355,15 @@ def process_image(image: npt.NDArray[np.uint8]) -> npt.NDArray[np.uint8]:
     src_pts_ordered[1] = src_pts[np.argmin(d)]
     src_pts_ordered[3] = src_pts[np.argmax(d)]
 
+    # compute dimensions of output image
     side_lengths = [
         np.linalg.norm(src_pts_ordered[i] - src_pts_ordered[i - 1])
         for i in range(4)
     ]
-
     output_height = int(round((side_lengths[0] + side_lengths[2]) / 2))
     output_width = int(round((side_lengths[1] + side_lengths[3]) / 2))
 
-    # output_width, output_height = 500, 100
+    # compute destination points for perspective transform
     dst_pts = np.array(
         [
             [0, 0],
@@ -213,91 +374,134 @@ def process_image(image: npt.NDArray[np.uint8]) -> npt.NDArray[np.uint8]:
         dtype=np.float32,
     )
 
+    # compute perspective matrix
     perspective_matrix = cv2.getPerspectiveTransform(src_pts_ordered, dst_pts)
+
+    # apply perspective transform to the input image and the component image
     warped_image = cv2.warpPerspective(
-        stretched_image, perspective_matrix, (output_width, output_height)
+        image, perspective_matrix, (output_width, output_height)
     )
     warped_background = cv2.warpPerspective(
         component_image, perspective_matrix, (output_width, output_height)
     )
 
-    warped_image = warped_image
-    min_val, max_val = cv2.minMaxLoc(warped_image)[:2]
+    return warped_image, warped_background
+
+
+def final_process(
+    image: npt.NDArray[np.uint8], background: npt.NDArray[np.uint8]
+) -> npt.NDArray[np.uint8]:
+    """
+    Apply a final processing to the image to obtain a clear text.
+
+    @param image A numpy image.
+    @param background A numpy binary image representing the background.
+    @return A numpy image with black text on a white background.
+    """
+    logging.info("final_process")
+
+    # doing a final stretching on the final image
     warped_stretched_image = cv2.normalize(
-        warped_image, None, 0, 255, cv2.NORM_MINMAX, dtype=cv2.CV_8U
+        image, None, 0, 255, cv2.NORM_MINMAX, dtype=cv2.CV_8U
     )
 
-    logging.debug("Adding blur")
-
+    # adding blur to text for reducing edge roughness
     text = cv2.GaussianBlur(warped_stretched_image, (3, 3), 1)
-    text = extract_text(text, warped_background)
+
+    # setting the text as black and the background as black
+    text = extract_text(text, background)
+
+    # assert for type safety
+    # assert isinstance(text, np.ndarray) and text.dtype == np.uint8, "filled must be of type ndarray[Any, dtype[unsignedinteger[_8Bit]]]"
 
     return text
 
 
-def detect_text(image: npt.NDArray[np.uint8]) -> list[tuple[str, int]]:
+def detect_text(image: npt.NDArray[np.uint8]) -> dict[str, float]:
     """
-    Detect text in an image
-    @param Path to the image file
-    @return Detected text as a string
+    Detect the text in the given image.
+
+    Detects the text in the given image and returns the text and corresponding
+    confidence values.
+
+    @param image A numpy array representing the image in the format of a 2D
+    array of pixels.
     """
     logging.info("detect_text")
 
+    # use pytesseract to get detected text
     data = pytesseract.image_to_data(
         image, output_type=pytesseract.Output.DICT
     )
 
-    text_and_confidences = []
+    # create a dictionary from the resulting list
+    text_and_confidences = {}
     for text, conf in zip(data["text"], data["conf"]):
         if int(conf) > 0 and text.strip():
-            text_and_confidences.append((text, int(conf)))
+            text_and_confidences[text] = float(conf)
+
     return text_and_confidences
 
 
-def detect_languages(text_and_confidences: list[str]) -> dict[str, float]:
+def detect_languages(
+    text_and_confidences: dict[str, float]
+) -> dict[str, float]:
     """
-    Detect languages list of texts
-    @param text_and_confidences list of texts to detect language from
-    @return a list of tuple that contain a country code and a confidence level
+    Detect the language present in the list of texts.
+
+    Detects the language present in the list of texts and returns the language
+    confidences as a dictionary.
+
+    @param text_and_confidences A list of tuples containing the text ot detect
+    the languages from and its confidence.
+    @raise Exception An error occured during language detection.
+    @return A dictionary where the jeys are the detected languages and the
+    values are the confidence scores.
     """
     logging.info("detect_languages")
 
-    language_confidences = defaultdict(int)
-
+    # iterate trhough the images to get the languages
+    language_confidences: dict[str, float] = defaultdict(int)
     min_text_length = 3
-
-    for text, conf in text_and_confidences:
+    for text, conf in text_and_confidences.items():
+        # if the text is too small then we just skip it
         if len(text) < min_text_length:
-            logging.info(
-                f"Skipping '{text}' as its length is below the minimum threshold"
+            logging.debug(
+                f"Skipping '{text}' as its length \
+                    is below the minimum threshold"
             )
             continue
         try:
+            # get language
             lang_detection = detect_langs(text)
             for lang in lang_detection:
                 language_confidences[lang.lang] += lang.prob * conf * len(text)
         except Exception as e:
             logging.info(f"Skipping '{text}' as it caused lang_detect to fail")
 
+    # compute total weight, if we didnt get anything return an empty directory
     total_weight = sum(language_confidences.values())
-
     if total_weight == 0:
         return {}
 
+    # normalize the languages detected
     for lang in language_confidences:
         language_confidences[lang] /= total_weight
 
     return language_confidences
 
 
-def extract_text(image, mask):
+def extract_text(
+    image: npt.NDArray[np.float32], mask: npt.NDArray[np.uint8]
+) -> npt.NDArray[np.uint8]:
     """
-    Extract text from an image using a mask of the background
-    @param image Grayscale input image containing the text
-    @param Binary mask where 255 indates background pixel
-    @return Binary image with extracted text, where 0 indicates text and 255
-    indicates background
+    Extract text from an image using a given mask.
+
+    @param image A numpy image representing the input image.
+    @param mask A numpy image representing the binary mask.
+    @return A numpy image representing the binary image with extracted text.
     """
+    # compute the mean value of the image inside the mask
     mean = 0
     total = 0
     for j in range(image.shape[0]):
@@ -309,7 +513,8 @@ def extract_text(image, mask):
 
     mean = int(np.rint(mean / total))
 
-    binary = np.zeros_like(image)
+    # create a binary image by thresholding the image based on the mean value
+    binary = np.zeros_like(image, dtype=np.uint8)
     for j in range(image.shape[0]):
         for i in range(image.shape[1]):
             if mask[j, i] == 255:
@@ -319,18 +524,32 @@ def extract_text(image, mask):
 
     binary = 255 - binary
 
+    # apply morphological closing to the binary image
     kernel = np.ones((3, 3), np.uint8)
     closed_image = cv2.morphologyEx(binary, cv2.MORPH_CLOSE, kernel)
+
+    # assert for type safety
+    # assert isinstance(closed_image, np.ndarray) and closed_image.dtype == np.uint8, "filled must be of type ndarray[Any, dtype[unsignedinteger[_8Bit]]]"
 
     return closed_image
 
 
-def fill_holes(image):
-    """Fills holes in a binary image
-    @param image The binary image to process
-    @return The image with filled holes
+def fill_holes(image: npt.NDArray[np.uint8]) -> npt.NDArray[np.uint8]:
     """
-    filled = np.zeros_like(image)
+    Fill holes in a binary image.
+
+    Fills in holes in a binary image by ieterating throught the rows and
+    columns of the image and filling in any white space found between two
+    non-white spaces.
+
+    @param A numpy image containing the binary image.
+    @return A numpy image containing the filled binary image.
+    """
+    logging.info("fill_holes")
+
+    # creating returned image
+    filled = np.zeros_like(image, dtype=np.uint8)
+
     # Fill holes horizontally
     for row in range(image.shape[0]):
         first_white = np.argmax(image[row, :] == 255)
@@ -352,4 +571,8 @@ def fill_holes(image):
             and image[last_white, col] == 255
         ):
             filled[first_white:last_white, col] = 255
+
+    # assert for type safety
+    # assert isinstance(filled, np.ndarray) and filled.dtype == np.uint8, "filled must be of type ndarray[Any, dtype[unsignedinteger[_8Bit]]]"
+
     return filled

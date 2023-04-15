@@ -113,7 +113,7 @@ A number of tools have been created for this project :
 
 There were things we did not have the time to do for this program, if one wants to expand it, they can start here:
 
-- Implement more quick strategies specific to geoguessr (car analysis, picture quality analysis, etc)
+- Implement more quick strategies specific to geoguessr (google car analysis, picture quality analysis, etc)
 - A overpass, with auto caching has been implemented, but currently it is not used, one could try to use the connection with overpass to pin point the exact coordinates.
 - Level of helps could be added if the program gives better result (1 could give the country, 2 could give the city and 3 could give the exact coordinates)
 - [Similar projects](https://github.com/Stelath/geoguessr-ai) use complex convolution network to estimate the exact data, they have seen good result, but the dataset is only for us country. If one was able to construct a bigger and more diverse dataset, they could make use this technique to gather a new very powerful method to guess the country.

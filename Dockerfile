@@ -1,33 +1,28 @@
 # First stage: build
-FROM alpine:edge
+FROM python:3.10
 
-RUN apk update && apk add --no-cache python3 python3-dev py3-pip py3-wheel g++ make cmake gfortran musl-dev linux-headers geos geos-dev libstdc++ tesseract-ocr tesseract-ocr-dev leptonica leptonica-dev openblas openblas-dev libgomp jpeg-dev zlib-dev libwebp-dev tiff-dev openjpeg-dev freetype-dev proj proj-dev curl git bash gcc bzip2-dev readline-dev sqlite-dev openssl-dev libffi-dev xz-dev proj-dev proj proj-util gdal gdal-dev
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    g++ make cmake gfortran \
+    libgeos-dev libtesseract-dev libleptonica-dev \
+    libopenblas-dev libgomp1 libjpeg-dev libz-dev libwebp-dev \
+    libtiff5-dev libopenjp2-7-dev libfreetype6-dev \
+    libproj-dev proj-data proj-bin \
+    libgdal-dev gdal-bin \
+    git bash gcc libbz2-dev libreadline-dev \
+    libsqlite3-dev libssl-dev libffi-dev liblzma-dev libc6 \
+    libgl1-mesa-dev tesseract-ocr
 
-# install poetry as we need it to install the program
-RUN pip install poetry
+RUN pip install --no-cache-dir poetry
 
-# installing pyenv
-RUN curl https://pyenv.run | bash
-RUN echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.bashrc && \
-    echo 'command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.bashrc && \
-    echo 'eval "$(pyenv init -)"' >> ~/.bashrc && \
-    echo 'eval "$(pyenv virtualenv-init -)"' >> ~/.bashrc
-
-# installs python 3.10
-SHELL [ "/bin/bash", "-c" ]
-RUN source ~/.bashrc && pyenv install 3.10 && pyenv global 3.10
-
-ENV PROJ_DIR="/usr"
-ENV PROJ_LIBDIR="/usr/lib"
-ENV PROJ_INCDIR="/usr/include"
+ENV PROJ_DIR="/usr" \
+    PROJ_LIBDIR="/usr/lib" \
+    PROJ_INCDIR="/usr/include"
 
 COPY pyproject.toml /app/pyproject.toml
 WORKDIR /app
 
 # setting up poetry environment and installing libraries
-RUN source ~/.bashrc && \
-    # poetry config virtualenvs.create false && \
-    poetry env use 3.10 && \
+RUN poetry config virtualenvs.create false && \
     poetry install --no-dev --no-interaction --no-ansi
 
 # Expose port 8000 for external access

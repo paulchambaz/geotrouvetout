@@ -9,9 +9,9 @@ test:
 
 lint-file:
 	@pydocstyle $(file)
-	@pylint $(file)
-	@mypy --strict --ignore-missing-imports $(file)
 	@pycodestyle --show-source --statistics $(file)
+	@mypy --strict --ignore-missing-imports $(file)
+	@pylint $(file)
 
 lint-type:
 	@mypy --strict --ignore-missing-imports main.py geotrouvetout rest_api tests

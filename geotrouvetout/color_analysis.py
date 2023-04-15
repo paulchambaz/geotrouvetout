@@ -1,5 +1,4 @@
-"""
-Computes promitiy to countries color profile.
+"""! @brief Computes promitiy to countries color profile.
 
 This module provides functions for analyzing the color profile of images and
 comparing them to country-sepecific profiles.
@@ -24,13 +23,13 @@ from skimage import color
 
 
 def get_color_analysis(image: Image.Image) -> dict[str, float]:
-    """
-    Compute color analysis for an image.
+    """! Compute color analysis for an image.
 
     Compute the color analysis of an input image and compare it to a database
     of country-specific color profiles.
 
     @param image The imput image to be analysed.
+
     @return A dictionary with country codes as keys and their scores as values.
     """
     logging.info("get_color_analysis")
@@ -59,10 +58,10 @@ def get_color_analysis(image: Image.Image) -> dict[str, float]:
 def load_country_histograms(
     json_file: str,
 ) -> dict[str, dict[str, dict[str, list[int]]]]:
-    """
-    Load a dictionary of country-specific histograms from a JSON file.
+    """! Load a dictionary of country-specific histograms from a JSON file.
 
     @param json_file THe path to the JSON file containing the JSON file.
+
     @return A dictionary with country codes as keys and their respective
     histograms as values.
     """
@@ -122,14 +121,14 @@ def load_country_histograms(
 
 
 def create_zone_images(image: Image.Image) -> dict[str, Image.Image]:
-    """
-    Create zone images for a given image.
+    """! Create zone images for a given image.
 
     Creates five zones by dividing the input image vertically into four
     quarters and the bottom quarter horizontally into a middle third and two
     side thirds.
 
     @param image The input image.
+
     @return A dictionary with five zones where the keys are zone names and the
     values are corresponding zone images.
     """
@@ -185,11 +184,11 @@ def create_zone_images(image: Image.Image) -> dict[str, Image.Image]:
 def create_histograms(
     image: Image.Image, bins: int = 10
 ) -> dict[str, dict[str, list[int]]]:
-    """
-    Create histograms for an image, given the number of bins.
+    """! Create histograms for an image, given the number of bins.
 
     @param image The image to create histograms for.
     @param bins The number of bins to use for the histograms.
+
     @return A dictionary with the hue, saturation and value histograms for the
     image.
     """
@@ -223,12 +222,14 @@ def create_histograms(
 def compare_histograms(
     image: Image.Image, country: dict[str, dict[str, list[int]]]
 ) -> float:
-    """
-    Compare the distance between the histograms of an image and a country.
+    """! Compare the distance between the histograms of an image and a country.
 
     @param image The image to compare.
     @param country A dict containing the histograms for HSV of the five zones
-    for each country
+    for each country.
+
+    @return The distance between the image's histogram and the country's
+    histogram, normalized by the total weights.
     """
     weights = get_histogram_distance_weights()
 
@@ -248,11 +249,7 @@ def compare_histograms(
 
 
 def get_histogram_distance_weights() -> dict[str, dict[str, float]]:
-    """
-    Return weights for histogram comparison.
-
-    Returns a dictionary containing the weights for different zones and
-    channels used in computing the distance between two histograms.
+    """! Return weights for histogram comparison.
 
     @return A dictionary with keys and values for the weights for each zone of
     the image.
@@ -301,11 +298,11 @@ def get_histogram_distance_weights() -> dict[str, dict[str, float]]:
 
 
 def chi_square_distance(hist1: list[int], hist2: list[int]) -> float:
-    """
-    Calculate the chi-square distance between two histograms.
+    """! Calculate the chi-square distance between two histograms.
 
     @param hist1 The first histogram to compare.
     @param hist2 The second histogram to compare.
+
     @return The chi-square distance between the two histograms.
     """
     logging.info("chi_square_distance")
@@ -329,7 +326,7 @@ def get_dist(
     channel: str,
 ) -> float:
     """
-    Compute distance between two histograms.
+    ! Compute distance between two histograms.
 
     Computes the chi-square distance between two histograms of a specific
     channel and zone.
@@ -342,6 +339,9 @@ def get_dist(
     distance.
     @param channel A string speciying the channel for which to calculate the
     distance.
+
+    @return The chi-square distance between the histograms of the specified
+    channel and zone.
     """
     logging.info("get_dist")
     return chi_square_distance(

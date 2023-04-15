@@ -5,7 +5,8 @@
     "languages": [
       "NL",
       "PA"
-    ]
+    ],
+    "url": "aw"
   },
   "AFG": {
     "continent": "AS",
@@ -14,35 +15,40 @@
       "PS",
       "UZ",
       "TK"
-    ]
+    ],
+    "url": "af"
   },
   "AGO": {
     "continent": "AF",
     "zone": "SAF",
     "languages": [
       "PT"
-    ]
+    ],
+    "url": "ao"
   },
   "AIA": {
     "continent": "AM",
     "zone": "WIN",
     "languages": [
       "EN"
-    ]
+    ],
+    "url": "ai"
   },
   "ALB": {
     "continent": "EU",
     "zone": "SEE",
     "languages": [
       "SQ"
-    ]
+    ],
+    "url": "al"
   },
   "ARE": {
     "continent": "AS",
     "zone": "SWA",
     "languages": [
       "AR"
-    ]
+    ],
+    "url": "ae"
   },
   "ARG": {
     "continent": "AM",
@@ -50,7 +56,8 @@
     "languages": [
       "ES",
       "GN"
-    ]
+    ],
+    "url": "ar"
   },
   "ARM": {
     "continent": "AS",
@@ -58,7 +65,8 @@
     "languages": [
       "HY",
       "RU"
-    ]
+    ],
+    "url": "am"
   },
   "ASM": {
     "continent": "OC",
@@ -66,28 +74,32 @@
     "languages": [
       "EN",
       "SM"
-    ]
+    ],
+    "url": "as"
   },
   "ATG": {
     "continent": "AM",
     "zone": "WIN",
     "languages": [
       "EN"
-    ]
+    ],
+    "url": "ag"
   },
   "AUS": {
     "continent": "OC",
     "zone": "PAC",
     "languages": [
       "EN"
-    ]
+    ],
+    "url": "au"
   },
   "AUT": {
     "continent": "EU",
     "zone": "CEU",
     "languages": [
       "DE"
-    ]
+    ],
+    "url": "at"
   },
   "AZE": {
     "continent": "AS",
@@ -95,7 +107,8 @@
     "languages": [
       "AZ",
       "HY"
-    ]
+    ],
+    "url": "az"
   },
   "BDI": {
     "continent": "AF",
@@ -103,7 +116,8 @@
     "languages": [
       "FR",
       "RN"
-    ]
+    ],
+    "url": "bi"
   },
   "BEL": {
     "continent": "EU",
@@ -112,14 +126,16 @@
       "NL",
       "FR",
       "DE"
-    ]
+    ],
+    "url": "be"
   },
   "BEN": {
     "continent": "AF",
     "zone": "WAF",
     "languages": [
       "FR"
-    ]
+    ],
+    "url": "bj"
   },
   "BFA": {
     "continent": "AF",
@@ -127,35 +143,40 @@
     "languages": [
       "FR",
       "FF"
-    ]
+    ],
+    "url": "bf"
   },
   "BGD": {
     "continent": "AS",
     "zone": "SAS",
     "languages": [
       "BN"
-    ]
+    ],
+    "url": "bd"
   },
   "BGR": {
     "continent": "EU",
     "zone": "SEE",
     "languages": [
       "BG"
-    ]
+    ],
+    "url": "bg"
   },
   "BHR": {
     "continent": "AS",
     "zone": "SWA",
     "languages": [
       "AR"
-    ]
+    ],
+    "url": "bh"
   },
   "BHS": {
     "continent": "AM",
     "zone": "WIN",
     "languages": [
       "EN"
-    ]
+    ],
+    "url": "bs"
   },
   "BIH": {
     "continent": "EU",
@@ -164,7 +185,8 @@
       "BS",
       "HR",
       "SR"
-    ]
+    ],
+    "url": "ba"
   },
   "BLR": {
     "continent": "EU",
@@ -172,7 +194,8 @@
     "languages": [
       "BE",
       "RU"
-    ]
+    ],
+    "url": "by"
   },
   "BLZ": {
     "continent": "AM",
@@ -180,14 +203,16 @@
     "languages": [
       "EN",
       "ES"
-    ]
+    ],
+    "url": "bz"
   },
   "BMU": {
     "continent": "AM",
     "zone": "WIN",
     "languages": [
       "EN"
-    ]
+    ],
+    "url": "bm"
   },
   "BOL": {
     "continent": "AM",
@@ -203,14 +228,16 @@
     "zone": "SAM",
     "languages": [
       "PT"
-    ]
+    ],
+    "url": "br"
   },
   "BRB": {
     "continent": "AM",
     "zone": "WIN",
     "languages": [
       "EN"
-    ]
+    ],
+    "url": "bb"
   },
   "BRN": {
     "continent": "AS",
@@ -224,7 +251,8 @@
     "zone": "SAS",
     "languages": [
       "DZ"
-    ]
+    ],
+    "url": "bt"
   },
   "BWA": {
     "continent": "AF",
@@ -232,7 +260,8 @@
     "languages": [
       "EN",
       "TN"
-    ]
+    ],
+    "url": "bw"
   },
   "CAF": {
     "continent": "AF",
@@ -240,7 +269,8 @@
     "languages": [
       "FR",
       "SG"
-    ]
+    ],
+    "url": "cf"
   },
   "CAN": {
     "continent": "AM",
@@ -248,14 +278,16 @@
     "languages": [
       "EN",
       "FR"
-    ]
+    ],
+    "url": "ca"
   },
   "CCK": {
     "continent": "AS",
     "zone": "SEA",
     "languages": [
       "EN"
-    ]
+    ],
+    "url": "cc"
   },
   "CHE": {
     "continent": "EU",
@@ -264,21 +296,24 @@
       "DE",
       "FR",
       "IT"
-    ]
+    ],
+    "url": "ch"
   },
   "CHL": {
     "continent": "AM",
     "zone": "SAM",
     "languages": [
       "ES"
-    ]
+    ],
+    "url": "cl"
   },
   "CHN": {
     "continent": "AS",
     "zone": "EAS",
     "languages": [
       "ZH"
-    ]
+    ],
+    "url": "cn"
   },
   "CIV": {
     "continent": "AF",
@@ -293,7 +328,8 @@
     "languages": [
       "EN",
       "FR"
-    ]
+    ],
+    "url": "cm"
   },
   "COG": {
     "continent": "AF",
@@ -301,21 +337,24 @@
     "languages": [
       "FR",
       "LN"
-    ]
+    ],
+    "url": "cg"
   },
   "COK": {
     "continent": "OC",
     "zone": "PAC",
     "languages": [
       "EN"
-    ]
+    ],
+    "url": "ck"
   },
   "COL": {
     "continent": "AM",
     "zone": "SAM",
     "languages": [
       "ES"
-    ]
+    ],
+    "url": "co"
   },
   "CPV": {
     "continent": "AF",
@@ -329,28 +368,32 @@
     "zone": "CAM",
     "languages": [
       "ES"
-    ]
+    ],
+    "url": "cr"
   },
   "CUB": {
     "continent": "AM",
     "zone": "WIN",
     "languages": [
       "ES"
-    ]
+    ],
+    "url": "cu"
   },
   "CXR": {
     "continent": "AS",
     "zone": "SEA",
     "languages": [
       "EN"
-    ]
+    ],
+    "url": "cx"
   },
   "CYM": {
     "continent": "AM",
     "zone": "WIN",
     "languages": [
       "EN"
-    ]
+    ],
+    "url": "ky"
   },
   "CYP": {
     "continent": "AS",
@@ -359,7 +402,8 @@
       "EL",
       "TR",
       "HY"
-    ]
+    ],
+    "url": "cy"
   },
   "CZE": {
     "continent": "EU",
@@ -374,7 +418,8 @@
     "zone": "WEU",
     "languages": [
       "DE"
-    ]
+    ],
+    "url": "de"
   },
   "DJI": {
     "continent": "AF",
@@ -382,49 +427,56 @@
     "languages": [
       "FR",
       "AR"
-    ]
+    ],
+    "url": "dj"
   },
   "DMA": {
     "continent": "AM",
     "zone": "WIN",
     "languages": [
       "EN"
-    ]
+    ],
+    "url": "dm"
   },
   "DNK": {
     "continent": "EU",
     "zone": "NEU",
     "languages": [
       "DA"
-    ]
+    ],
+    "url": "dk"
   },
   "DOM": {
     "continent": "AM",
     "zone": "WIN",
     "languages": [
       "ES"
-    ]
+    ],
+    "url": "do"
   },
   "DZA": {
     "continent": "AF",
     "zone": "NAF",
     "languages": [
       "AR"
-    ]
+    ],
+    "url": "dz"
   },
   "ECU": {
     "continent": "AM",
     "zone": "SAM",
     "languages": [
       "ES"
-    ]
+    ],
+    "url": "ec"
   },
   "EGY": {
     "continent": "AF",
     "zone": "NAF",
     "languages": [
       "AR"
-    ]
+    ],
+    "url": "eg"
   },
   "ERI": {
     "continent": "AF",
@@ -433,35 +485,40 @@
       "TI",
       "AR",
       "EN"
-    ]
+    ],
+    "url": "er"
   },
   "ESH": {
     "continent": "AF",
     "zone": "NAF",
     "languages": [
       "ES"
-    ]
+    ],
+    "url": "eh"
   },
   "ESP": {
     "continent": "EU",
     "zone": "SWE",
     "languages": [
       "ES"
-    ]
+    ],
+    "url": "es"
   },
   "EST": {
     "continent": "EU",
     "zone": "EEU",
     "languages": [
       "ET"
-    ]
+    ],
+    "url": "ee"
   },
   "ETH": {
     "continent": "AF",
     "zone": "EAF",
     "languages": [
       "AM"
-    ]
+    ],
+    "url": "et"
   },
   "FIN": {
     "continent": "EU",
@@ -469,7 +526,8 @@
     "languages": [
       "FI",
       "SV"
-    ]
+    ],
+    "url": "fi"
   },
   "FJI": {
     "continent": "OC",
@@ -493,7 +551,8 @@
     "zone": "WEU",
     "languages": [
       "FR"
-    ]
+    ],
+    "url": "fr"
   },
   "FRO": {
     "continent": "EU",
@@ -514,21 +573,24 @@
     "zone": "WAF",
     "languages": [
       "FR"
-    ]
+    ],
+    "url": "ga"
   },
   "GBR": {
     "continent": "EU",
     "zone": "WEU",
     "languages": [
       "EN"
-    ]
+    ],
+    "url": "gb"
   },
   "GEO": {
     "continent": "AS",
     "zone": "SWA",
     "languages": [
       "KA"
-    ]
+    ],
+    "url": "ge"
   },
   "GGY": {
     "continent": "EU",
@@ -543,14 +605,16 @@
     "zone": "WAF",
     "languages": [
       "EN"
-    ]
+    ],
+    "url": "gh"
   },
   "GIB": {
     "continent": "EU",
     "zone": "SWE",
     "languages": [
       "EN"
-    ]
+    ],
+    "url": "gi"
   },
   "GIN": {
     "continent": "AF",
@@ -558,28 +622,32 @@
     "languages": [
       "FR",
       "FF"
-    ]
+    ],
+    "url": "gn"
   },
   "GLP": {
     "continent": "AM",
     "zone": "WIN",
     "languages": [
       "FR"
-    ]
+    ],
+    "url": "gp"
   },
   "GMB": {
     "continent": "AF",
     "zone": "WAF",
     "languages": [
       "EN"
-    ]
+    ],
+    "url": "gm"
   },
   "GNB": {
     "continent": "AF",
     "zone": "WAF",
     "languages": [
       "PT"
-    ]
+    ],
+    "url": "gw"
   },
   "GNQ": {
     "continent": "AF",
@@ -587,42 +655,48 @@
     "languages": [
       "ES",
       "FR"
-    ]
+    ],
+    "url": "gq"
   },
   "GRC": {
     "continent": "EU",
     "zone": "SEE",
     "languages": [
       "EL"
-    ]
+    ],
+    "url": "gr"
   },
   "GRD": {
     "continent": "AM",
     "zone": "WIN",
     "languages": [
       "EN"
-    ]
+    ],
+    "url": "gd"
   },
   "GRL": {
     "continent": "AM",
     "zone": "NAM",
     "languages": [
       "KL"
-    ]
+    ],
+    "url": "gl"
   },
   "GTM": {
     "continent": "AM",
     "zone": "CAM",
     "languages": [
       "ES"
-    ]
+    ],
+    "url": "gt"
   },
   "GUF": {
     "continent": "AM",
     "zone": "SAM",
     "languages": [
       "FR"
-    ]
+    ],
+    "url": "gf"
   },
   "GUM": {
     "continent": "OC",
@@ -631,28 +705,32 @@
       "EN",
       "CH",
       "ES"
-    ]
+    ],
+    "url": "gu"
   },
   "GUY": {
     "continent": "AM",
     "zone": "SAM",
     "languages": [
       "EN"
-    ]
+    ],
+    "url": "gy"
   },
   "HND": {
     "continent": "AM",
     "zone": "CAM",
     "languages": [
       "ES"
-    ]
+    ],
+    "url": "hn"
   },
   "HRV": {
     "continent": "EU",
     "zone": "SEE",
     "languages": [
       "HR"
-    ]
+    ],
+    "url": "hr"
   },
   "HTI": {
     "continent": "AM",
@@ -660,21 +738,24 @@
     "languages": [
       "FR",
       "HT"
-    ]
+    ],
+    "url": "ht"
   },
   "HUN": {
     "continent": "EU",
     "zone": "CEU",
     "languages": [
       "HU"
-    ]
+    ],
+    "url": "hu"
   },
   "IDN": {
     "continent": "AS",
     "zone": "SEA",
     "languages": [
       "ID"
-    ]
+    ],
+    "url": "id"
   },
   "IMN": {
     "continent": "EU",
@@ -690,7 +771,8 @@
     "languages": [
       "HI",
       "EN"
-    ]
+    ],
+    "url": "in"
   },
   "IRL": {
     "continent": "EU",
@@ -698,7 +780,8 @@
     "languages": [
       "GA",
       "EN"
-    ]
+    ],
+    "url": "ie"
   },
   "IRN": {
     "continent": "AS",
@@ -713,14 +796,16 @@
     "languages": [
       "AR",
       "KU"
-    ]
+    ],
+    "url": "iq"
   },
   "ISL": {
     "continent": "EU",
     "zone": "NEU",
     "languages": [
       "IS"
-    ]
+    ],
+    "url": "is"
   },
   "ISR": {
     "continent": "AS",
@@ -728,21 +813,24 @@
     "languages": [
       "HE",
       "AR"
-    ]
+    ],
+    "url": "il"
   },
   "ITA": {
     "continent": "EU",
     "zone": "SEU",
     "languages": [
       "IT"
-    ]
+    ],
+    "url": "it"
   },
   "JAM": {
     "continent": "AM",
     "zone": "WIN",
     "languages": [
       "EN"
-    ]
+    ],
+    "url": "jm"
   },
   "JEY": {
     "continent": "EU",
@@ -757,14 +845,16 @@
     "zone": "SWA",
     "languages": [
       "AR"
-    ]
+    ],
+    "url": "jo"
   },
   "JPN": {
     "continent": "AS",
     "zone": "EAS",
     "languages": [
       "JA"
-    ]
+    ],
+    "url": "jp"
   },
   "KAZ": {
     "continent": "AS",
@@ -772,7 +862,8 @@
     "languages": [
       "KK",
       "RU"
-    ]
+    ],
+    "url": "kz"
   },
   "KEN": {
     "continent": "AF",
@@ -780,7 +871,8 @@
     "languages": [
       "EN",
       "SW"
-    ]
+    ],
+    "url": "ke"
   },
   "KGZ": {
     "continent": "AS",
@@ -788,28 +880,32 @@
     "languages": [
       "KY",
       "RU"
-    ]
+    ],
+    "url": "kg"
   },
   "KHM": {
     "continent": "AS",
     "zone": "SEA",
     "languages": [
       "KM"
-    ]
+    ],
+    "url": "kh"
   },
   "KIR": {
     "continent": "OC",
     "zone": "PAC",
     "languages": [
       "EN"
-    ]
+    ],
+    "url": "ki"
   },
   "KNA": {
     "continent": "AM",
     "zone": "WIN",
     "languages": [
       "EN"
-    ]
+    ],
+    "url": "kn"
   },
   "KOR": {
     "continent": "AS",
@@ -823,7 +919,8 @@
     "zone": "SWA",
     "languages": [
       "AR"
-    ]
+    ],
+    "url": "kw"
   },
   "LAO": {
     "continent": "AS",
@@ -838,14 +935,16 @@
     "languages": [
       "AR",
       "FR"
-    ]
+    ],
+    "url": "lb"
   },
   "LBR": {
     "continent": "AF",
     "zone": "WAF",
     "languages": [
       "EN"
-    ]
+    ],
+    "url": "lr"
   },
   "LBY": {
     "continent": "AF",
@@ -859,14 +958,16 @@
     "zone": "WIN",
     "languages": [
       "EN"
-    ]
+    ],
+    "url": "lc"
   },
   "LIE": {
     "continent": "EU",
     "zone": "CEU",
     "languages": [
       "DE"
-    ]
+    ],
+    "url": "li"
   },
   "LKA": {
     "continent": "AS",
@@ -874,7 +975,8 @@
     "languages": [
       "SI",
       "TA"
-    ]
+    ],
+    "url": "lk"
   },
   "LSO": {
     "continent": "AF",
@@ -882,14 +984,16 @@
     "languages": [
       "EN",
       "ST"
-    ]
+    ],
+    "url": "ls"
   },
   "LTU": {
     "continent": "EU",
     "zone": "EEU",
     "languages": [
       "LT"
-    ]
+    ],
+    "url": "lt"
   },
   "LUX": {
     "continent": "EU",
@@ -898,28 +1002,32 @@
       "FR",
       "DE",
       "LB"
-    ]
+    ],
+    "url": "lu"
   },
   "LVA": {
     "continent": "EU",
     "zone": "EEU",
     "languages": [
       "LV"
-    ]
+    ],
+    "url": "lv"
   },
   "MAR": {
     "continent": "AF",
     "zone": "NAF",
     "languages": [
       "AR"
-    ]
+    ],
+    "url": "ma"
   },
   "MCO": {
     "continent": "EU",
     "zone": "WEU",
     "languages": [
       "FR"
-    ]
+    ],
+    "url": "mc"
   },
   "MDA": {
     "continent": "EU",
@@ -933,14 +1041,16 @@
     "zone": "SAS",
     "languages": [
       "DV"
-    ]
+    ],
+    "url": "mv"
   },
   "MEX": {
     "continent": "AM",
     "zone": "CAM",
     "languages": [
       "ES"
-    ]
+    ],
+    "url": "mx"
   },
   "MHL": {
     "continent": "OC",
@@ -948,21 +1058,24 @@
     "languages": [
       "EN",
       "MH"
-    ]
+    ],
+    "url": "mh"
   },
   "MKD": {
     "continent": "EU",
     "zone": "SEE",
     "languages": [
       "MK"
-    ]
+    ],
+    "url": "mk"
   },
   "MLI": {
     "continent": "AF",
     "zone": "WAF",
     "languages": [
       "FR"
-    ]
+    ],
+    "url": "ml"
   },
   "MLT": {
     "continent": "EU",
@@ -970,14 +1083,16 @@
     "languages": [
       "MT",
       "EN"
-    ]
+    ],
+    "url": "mt"
   },
   "MNG": {
     "continent": "AS",
     "zone": "NAS",
     "languages": [
       "MN"
-    ]
+    ],
+    "url": "mn"
   },
   "MNP": {
     "continent": "OC",
@@ -985,35 +1100,40 @@
     "languages": [
       "EN",
       "CH"
-    ]
+    ],
+    "url": "mp"
   },
   "MOZ": {
     "continent": "AF",
     "zone": "SAF",
     "languages": [
       "PT"
-    ]
+    ],
+    "url": "mz"
   },
   "MRT": {
     "continent": "AF",
     "zone": "WAF",
     "languages": [
       "AR"
-    ]
+    ],
+    "url": "mr"
   },
   "MSR": {
     "continent": "AM",
     "zone": "WIN",
     "languages": [
       "EN"
-    ]
+    ],
+    "url": "ms"
   },
   "MTQ": {
     "continent": "AM",
     "zone": "WIN",
     "languages": [
       "FR"
-    ]
+    ],
+    "url": "mq"
   },
   "MWI": {
     "continent": "AF",
@@ -1021,12 +1141,14 @@
     "languages": [
       "EN",
       "NY"
-    ]
+    ],
+    "url": "mw"
   },
   "MYS": {
     "continent": "AS",
     "zone": "SEA",
-    "languages": []
+    "languages": [],
+    "url": "my"
   },
   "NAM": {
     "continent": "AF",
@@ -1034,56 +1156,64 @@
     "languages": [
       "EN",
       "AF"
-    ]
+    ],
+    "url": "na"
   },
   "NCL": {
     "continent": "OC",
     "zone": "PAC",
     "languages": [
       "FR"
-    ]
+    ],
+    "url": "nc"
   },
   "NER": {
     "continent": "AF",
     "zone": "WAF",
     "languages": [
       "FR"
-    ]
+    ],
+    "url": "ne"
   },
   "NFK": {
     "continent": "OC",
     "zone": "PAC",
     "languages": [
       "EN"
-    ]
+    ],
+    "url": "nf"
   },
   "NGA": {
     "continent": "AF",
     "zone": "WAF",
     "languages": [
       "EN"
-    ]
+    ],
+    "url": "ng"
   },
   "NIC": {
     "continent": "AM",
     "zone": "CAM",
     "languages": [
       "ES"
-    ]
+    ],
+    "url": "ni"
   },
   "NIU": {
     "continent": "OC",
     "zone": "PAC",
     "languages": [
       "EN"
-    ]
+    ],
+    "url": "nu"
   },
   "NLD": {
     "continent": "EU",
     "zone": "WEU",
     "languages": [
       "NL"
-    ]
+    ],
+    "url": "nl"
   },
   "NOR": {
     "continent": "EU",
@@ -1092,14 +1222,16 @@
       "NO",
       "NB",
       "NN"
-    ]
+    ],
+    "url": "no"
   },
   "NPL": {
     "continent": "AS",
     "zone": "SAS",
     "languages": [
       "NE"
-    ]
+    ],
+    "url": "np"
   },
   "NRU": {
     "continent": "OC",
@@ -1107,7 +1239,8 @@
     "languages": [
       "EN",
       "NA"
-    ]
+    ],
+    "url": "nr"
   },
   "NZL": {
     "continent": "OC",
@@ -1115,14 +1248,16 @@
     "languages": [
       "EN",
       "MI"
-    ]
+    ],
+    "url": "nz"
   },
   "OMN": {
     "continent": "AS",
     "zone": "SWA",
     "languages": [
       "AR"
-    ]
+    ],
+    "url": "om"
   },
   "PAK": {
     "continent": "AS",
@@ -1130,56 +1265,64 @@
     "languages": [
       "EN",
       "UR"
-    ]
+    ],
+    "url": "pk"
   },
   "PAN": {
     "continent": "AM",
     "zone": "CAM",
     "languages": [
       "ES"
-    ]
+    ],
+    "url": "pa"
   },
   "PCN": {
     "continent": "OC",
     "zone": "PAC",
     "languages": [
       "EN"
-    ]
+    ],
+    "url": "pn"
   },
   "PER": {
     "continent": "AM",
     "zone": "SAM",
     "languages": [
       "ES"
-    ]
+    ],
+    "url": "pe"
   },
   "PHL": {
     "continent": "AS",
     "zone": "SEA",
     "languages": [
       "EN"
-    ]
+    ],
+    "url": "ph"
   },
   "PLW": {
     "continent": "OC",
     "zone": "PAC",
     "languages": [
       "EN"
-    ]
+    ],
+    "url": "pw"
   },
   "PNG": {
     "continent": "OC",
     "zone": "PAC",
     "languages": [
       "EN"
-    ]
+    ],
+    "url": "pg"
   },
   "POL": {
     "continent": "EU",
     "zone": "EEU",
     "languages": [
       "PL"
-    ]
+    ],
+    "url": "pl"
   },
   "PRI": {
     "continent": "AM",
@@ -1187,7 +1330,8 @@
     "languages": [
       "ES",
       "EN"
-    ]
+    ],
+    "url": "pr"
   },
   "PRK": {
     "continent": "AS",
@@ -1201,7 +1345,8 @@
     "zone": "SWE",
     "languages": [
       "PT"
-    ]
+    ],
+    "url": "pt"
   },
   "PRY": {
     "continent": "AM",
@@ -1209,28 +1354,32 @@
     "languages": [
       "ES",
       "GN"
-    ]
+    ],
+    "url": "py"
   },
   "PYF": {
     "continent": "OC",
     "zone": "PAC",
     "languages": [
       "FR"
-    ]
+    ],
+    "url": "pf"
   },
   "QAT": {
     "continent": "AS",
     "zone": "SWA",
     "languages": [
       "AR"
-    ]
+    ],
+    "url": "qa"
   },
   "RUS": {
     "continent": "AS",
     "zone": "NAS",
     "languages": [
       "RU"
-    ]
+    ],
+    "url": "ru"
   },
   "RWA": {
     "continent": "AF",
@@ -1239,14 +1388,16 @@
       "RW",
       "EN",
       "FR"
-    ]
+    ],
+    "url": "rw"
   },
   "SAU": {
     "continent": "AS",
     "zone": "SWA",
     "languages": [
       "AR"
-    ]
+    ],
+    "url": "sa"
   },
   "SDN": {
     "continent": "AF",
@@ -1254,14 +1405,16 @@
     "languages": [
       "AR",
       "EN"
-    ]
+    ],
+    "url": "sd"
   },
   "SEN": {
     "continent": "AF",
     "zone": "WAF",
     "languages": [
       "FR"
-    ]
+    ],
+    "url": "sn"
   },
   "SGP": {
     "continent": "AS",
@@ -1271,42 +1424,48 @@
       "MS",
       "TA",
       "ZH"
-    ]
+    ],
+    "url": "sg"
   },
   "SJM": {
     "continent": "EU",
     "zone": "NEU",
     "languages": [
       "NO"
-    ]
+    ],
+    "url": "sj"
   },
   "SLB": {
     "continent": "OC",
     "zone": "PAC",
     "languages": [
       "EN"
-    ]
+    ],
+    "url": "sb"
   },
   "SLE": {
     "continent": "AF",
     "zone": "WAF",
     "languages": [
       "EN"
-    ]
+    ],
+    "url": "sl"
   },
   "SLV": {
     "continent": "AM",
     "zone": "CAM",
     "languages": [
       "ES"
-    ]
+    ],
+    "url": "sv"
   },
   "SMR": {
     "continent": "EU",
     "zone": "SEU",
     "languages": [
       "IT"
-    ]
+    ],
+    "url": "sm"
   },
   "SOM": {
     "continent": "AF",
@@ -1314,49 +1473,56 @@
     "languages": [
       "SO",
       "AR"
-    ]
+    ],
+    "url": "so"
   },
   "SPM": {
     "continent": "AM",
     "zone": "NAM",
     "languages": [
       "FR"
-    ]
+    ],
+    "url": "pm"
   },
   "STP": {
     "continent": "AF",
     "zone": "WAF",
     "languages": [
       "PT"
-    ]
+    ],
+    "url": "st"
   },
   "SUR": {
     "continent": "AM",
     "zone": "SAM",
     "languages": [
       "NL"
-    ]
+    ],
+    "url": "sr"
   },
   "SVK": {
     "continent": "EU",
     "zone": "CEU",
     "languages": [
       "SK"
-    ]
+    ],
+    "url": "sk"
   },
   "SVN": {
     "continent": "EU",
     "zone": "SEE",
     "languages": [
       "SL"
-    ]
+    ],
+    "url": "si"
   },
   "SWE": {
     "continent": "EU",
     "zone": "NEU",
     "languages": [
       "SV"
-    ]
+    ],
+    "url": "se"
   },
   "SWZ": {
     "continent": "AF",
@@ -1379,21 +1545,24 @@
     "languages": [
       "FR",
       "AR"
-    ]
+    ],
+    "url": "td"
   },
   "TGO": {
     "continent": "AF",
     "zone": "WAF",
     "languages": [
       "FR"
-    ]
+    ],
+    "url": "tg"
   },
   "THA": {
     "continent": "AS",
     "zone": "SEA",
     "languages": [
       "TH"
-    ]
+    ],
+    "url": "th"
   },
   "TJK": {
     "continent": "AS",
@@ -1401,14 +1570,16 @@
     "languages": [
       "TG",
       "RU"
-    ]
+    ],
+    "url": "tj"
   },
   "TKL": {
     "continent": "OC",
     "zone": "PAC",
     "languages": [
       "EN"
-    ]
+    ],
+    "url": "tk"
   },
   "TKM": {
     "continent": "AS",
@@ -1416,7 +1587,8 @@
     "languages": [
       "TK",
       "RU"
-    ]
+    ],
+    "url": "tm"
   },
   "TON": {
     "continent": "OC",
@@ -1424,35 +1596,40 @@
     "languages": [
       "EN",
       "TO"
-    ]
+    ],
+    "url": "to"
   },
   "TTO": {
     "continent": "AM",
     "zone": "WIN",
     "languages": [
       "EN"
-    ]
+    ],
+    "url": "tt"
   },
   "TUN": {
     "continent": "AF",
     "zone": "NAF",
     "languages": [
       "AR"
-    ]
+    ],
+    "url": "tn"
   },
   "TUR": {
     "continent": "AS",
     "zone": "SWA",
     "languages": [
       "TR"
-    ]
+    ],
+    "url": "tr"
   },
   "TUV": {
     "continent": "OC",
     "zone": "PAC",
     "languages": [
       "EN"
-    ]
+    ],
+    "url": "tv"
   },
   "TWN": {
     "continent": "AS",
@@ -1475,28 +1652,32 @@
     "languages": [
       "EN",
       "SW"
-    ]
+    ],
+    "url": "ug"
   },
   "UKR": {
     "continent": "EU",
     "zone": "EEU",
     "languages": [
       "UK"
-    ]
+    ],
+    "url": "ua"
   },
   "URY": {
     "continent": "AM",
     "zone": "SAM",
     "languages": [
       "ES"
-    ]
+    ],
+    "url": "uy"
   },
   "USA": {
     "continent": "AM",
     "zone": "NAM",
     "languages": [
       "EN"
-    ]
+    ],
+    "url": "us"
   },
   "UZB": {
     "continent": "AS",
@@ -1504,14 +1685,16 @@
     "languages": [
       "UZ",
       "RU"
-    ]
+    ],
+    "url": "uz"
   },
   "VCT": {
     "continent": "AM",
     "zone": "WIN",
     "languages": [
       "EN"
-    ]
+    ],
+    "url": "vc"
   },
   "VEN": {
     "continent": "AM",
@@ -1534,14 +1717,16 @@
       "BI",
       "EN",
       "FR"
-    ]
+    ],
+    "url": "vu"
   },
   "WLF": {
     "continent": "OC",
     "zone": "PAC",
     "languages": [
       "FR"
-    ]
+    ],
+    "url": "wf"
   },
   "WSM": {
     "continent": "OC",
@@ -1549,14 +1734,16 @@
     "languages": [
       "SM",
       "EN"
-    ]
+    ],
+    "url": "ws"
   },
   "YEM": {
     "continent": "AS",
     "zone": "SWA",
     "languages": [
       "AR"
-    ]
+    ],
+    "url": "ye"
   },
   "ZAF": {
     "continent": "AF",
@@ -1572,7 +1759,8 @@
       "VE",
       "XH",
       "ZU"
-    ]
+    ],
+    "url": "za"
   },
   "ZWE": {
     "continent": "AF",
@@ -1581,6 +1769,7 @@
       "EN",
       "SN",
       "ND"
-    ]
+    ],
+    "url": "zw"
   }
 }
