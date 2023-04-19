@@ -5,7 +5,7 @@ on:
 
 jobs:
   build:
-    runs-on: debian bullseye
+    runs-on: debian
     environment: deploy
     steps:
       - name: Run all tests and linters
