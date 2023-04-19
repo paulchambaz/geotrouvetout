@@ -1,0 +1,21 @@
+name: CI
+run-name: Geotrouvetout container build and publish
+on:
+  push:
+
+  jobs:
+    build:
+      runs-on: debian bullseye
+      environment: deploy
+      steps:
+        - name: Run all tests and linters
+          uses: make full-test
+
+        - name: Build the container
+          uses: make build
+
+        - name: Login to docker hub
+          uses: docker login --username paulchambaz --password ${{ secrets.DOCKER_HUB_TOKEN }}
+
+        - name: Publish the container
+          uses: make publish
