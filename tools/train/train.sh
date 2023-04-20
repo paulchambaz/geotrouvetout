@@ -1,10 +1,10 @@
 #!/bin/bash
 
-get_image() {
+get_images() {
   mkdir -p "${name}/images"
   # download the image from open image dataset
-  python downloader.py "${name}/image_ids.txt" --download_folder="${name}/images" --num_processes=5
   cat "$annotations_file"| cut -d ',' -f 1 | sed 's/^/train\//' > "${name}/image_ids.txt"
+  python downloader.py "${name}/image_ids.txt" --download_folder="${name}/images" --num_processes=5
 }
 
 get_labels() {
@@ -34,7 +34,7 @@ EOF
 
 [ ! -e downloader.py ] && wget "https://raw.githubusercontent.com/openimages/dataset/master/downloader.py"
 [ ! -e train-annotations-bbox.csv ] && wget "https://storage.googleapis.com/openimages/2018_04/train/train-annotations-bbox.csv"
-[ ! -e class-descriptions-boxable.csv ] && "wget https://storage.googleapis.com/openimages/2018_04/class-descriptions-boxable.csv"
+[ ! -e class-descriptions-boxable.csv ] && wget "https://storage.googleapis.com/openimages/2018_04/class-descriptions-boxable.csv"
 [ ! -e yolov8.yaml ] && wget "https://raw.githubusercontent.com/ultralytics/ultralytics/main/ultralytics/models/v8/yolov8.yaml"
 [ ! -e yolov8s.pt ] && wget "https://github.com/ultralytics/assets/releases/download/v0.0.0/yolov8s.pt"
 

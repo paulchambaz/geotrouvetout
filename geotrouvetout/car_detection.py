@@ -74,7 +74,12 @@ def detect_car_brand(image: Image.Image) -> dict[str, float]:
     """
     logging.info("detect_car_brand")
 
-    return {}
+    model = YOLO("weights/car_brand.pt") 
+
+    results = model(image)
+
+
+    return results
 
 def get_proba_car_country(car_brand: dict[str, float]) -> dict[str, float]:
     """

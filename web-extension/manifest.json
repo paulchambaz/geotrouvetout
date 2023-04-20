@@ -10,5 +10,9 @@
       "js": ["dist/content-script.js"]
     }
   ],
-  "permissions": ["activeTab"]
+  "permissions": [
+    "activeTab",
+    "https://geotrouvetout.chambaz.xyz/",
+    "<all_urls>"
+  ]
 }

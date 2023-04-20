@@ -1,0 +1,362 @@
+{
+  "CHN": {
+    "car": [
+      {
+        "volkswagen": 2233886,
+        "toyota": 2230226,
+        "honda": 1399135
+      }
+    ],
+    "total": 23563247
+  },
+  "USA": {
+    "car": [
+      {
+        "ford": 1767344,
+        "toyota": 1754989,
+        "chevrolet": 1519344
+      }
+    ],
+    "total": 13689240
+  },
+  "JPN": {
+    "car": [
+      {
+        "toyota": 1289132,
+        "suzuki": 602724,
+        "daihatsu": 575563
+      }
+    ],
+    "total": 4203712
+  },
+  "IND": {
+    "car": [
+      {
+        "suzuki": 1576025,
+        "hyundai": 552522,
+        "tata": 526798
+      }
+    ],
+    "total": 3780870
+  },
+  "DEU": {
+    "car": [
+      {
+        "volkswagen": 481177,
+        "mercedes": 231156,
+        "audi": 212964
+      }
+    ],
+    "total": 2651574
+  },
+  "BRA": {
+    "car": [
+      {
+        "fiat": 428975,
+        "chevrolet": 291418,
+        "volkswagen": 268867
+      }
+    ],
+    "total": 1957834
+  },
+  "KOR": {
+    "car": [
+      {
+        "hyundai": 688874,
+        "kia": 545216,
+        "genesis": 135249
+      }
+    ],
+    "total": 1672256
+  },
+  "GBR": {
+    "car": [
+      {
+        "volkswagen": 132582,
+        "ford": 125389,
+        "bmw": 109214
+      }
+    ],
+    "total": 1615219
+  },
+  "FRA": {
+    "car": [
+      {
+        "peugeot": 245543,
+        "renault": 236317,
+        "citroen": 130178
+      }
+    ],
+    "total": 1598976
+  },
+  "CAN": {
+    "car": [
+      {
+        "ford": 232842,
+        "toyota": 174931,
+        "chevrolet": 114692
+      }
+    ],
+    "total": 1524379
+  },
+  "ITA": {
+    "car": [
+      {
+        "fiat": 178969,
+        "volkswagen": 105277,
+        "toyota": 92225
+      }
+    ],
+    "total": 1317104
+  },
+  "MEX": {
+    "car": [
+      {
+        "nissan": 169321,
+        "chevrolet": 155436,
+        "toyota": 96433
+      }
+    ],
+    "total": 1089736
+  },
+  "AUS": {
+    "car": [
+      {
+        "toyota": 231050,
+        "mazda": 95718,
+        "hyundai": 78330
+      }
+    ],
+    "total": 1081429
+  },
+  "IDN": {
+    "car": [
+      {
+        "toyota": 331505,
+        "daihatsu": 202677,
+        "mitsubishi": 98842
+      }
+    ],
+    "total": 1048121
+  },
+  "THA": {
+    "car": [
+      {
+        "toyota": 288809,
+        "isuzu": 212527,
+        "honda": 82901
+      }
+    ],
+    "total": 849388
+  },
+  "TUR": {
+    "car": [
+      {
+        "fiat": 146489,
+        "renault": 99544,
+        "volkswagen": 77521
+      }
+    ],
+    "total": 827147
+  },
+  "ESP": {
+    "car": [
+      {
+        "toyota": 73594,
+        "kia": 63542,
+        "seat": 62942
+      }
+    ],
+    "total": 814369
+  },
+  "MYS": {
+    "car": [
+      {
+        "perodua": 282019,
+        "proton": 135621,
+        "toyota": 101217
+      }
+    ],
+    "total": 720593
+  },
+  "RUS": {
+    "car": [
+      {
+        "lada": 189243,
+        "kia": 67423,
+        "hyundai": 55121
+      }
+    ],
+    "total": 687370
+  },
+  "SAU": {
+    "car": [
+      {
+        "toyota": 197534,
+        "hyundai": 89182,
+        "nissan": 36398
+      }
+    ],
+    "total": 625936
+  },
+  "ZAF": {
+    "car": [
+      {
+        "toyota": 132033,
+        "volkswagen": 69801,
+        "suzuki": 47078
+      }
+    ],
+    "total": 528963
+  },
+  "POL": {
+    "car": [
+      {
+        "toyota": 78527,
+        "skoda": 42309,
+        "volkswagen": 35235
+      }
+    ],
+    "total": 481597
+  },
+  "ARG": {
+    "car": [
+      {
+        "toyota": 85422,
+        "fiat": 55736,
+        "volkswagen": 47833
+      }
+    ],
+    "total": 407567
+  },
+  "VNM": {
+    "car": [
+      {
+        "toyota": 91243,
+        "kia": 61282,
+        "mitsubishi": 39722
+      }
+    ],
+    "total": 405232
+  },
+  "BEL": {
+    "car": [
+      {
+        "bmw": 38019,
+        "volkswagen": 32123,
+        "mercedes": 29362
+      }
+    ],
+    "total": 366303
+  },
+  "EGY": {
+    "car": [
+      {
+        "chevrolet": 32544,
+        "nissan": 24013,
+        "suzuki": 20040
+      }
+    ],
+    "total": 186819
+  },
+  "DZA": {
+    "car": [
+      {
+        "dacia": 7085,
+        "kia": 3154,
+        "hyundai": 2897 
+      }
+    ],
+    "total": 25423
+  },
+  "PRT": {
+    "car": [
+      {
+        "peugeot": 3576,
+        "renault": 2398,
+        "bmw": 2079
+      }
+    ],
+    "total": 25423
+  },
+  "MAR": {
+    "car": [
+      {
+        "dacia": 38885,
+        "renault": 21545,
+        "hyundai": 13197 
+      }
+    ],
+    "total": 144179
+  },
+  "ROU": {
+    "car": [
+      {
+        "dacia": 39920,
+        "toyota ": 10110,
+        "hyundai": 9551  
+      }
+    ],
+    "total": 129327 
+  },
+  "ISR": {
+    "car": [
+      {
+        "hyundai": 42327,
+        "kia": 38224,
+        "toyota": 36881   
+      }
+    ],
+    "total": 268141  
+  },
+  "SWE": {
+    "car": [
+      {
+        "volvo": 5721,
+        "volkswagen": 3451,
+        "tesla": 4683    
+      }
+    ],
+    "total": 30242   
+  },
+  "NOR": {
+    "car": [
+      {
+        "tesla": 17356,
+        "volkswagen": 11561,
+        "skoda": 7558     
+      }
+    ],
+    "total": 200840    
+  },
+  "PER": {
+    "car": [
+      {
+        "toyota": 33001,
+        "hyundai": 15613,
+        "kia": 14545      
+      }
+    ],
+    "total": 159270     
+  },
+  "PAK": {
+    "car": [
+      {
+        "suzuki": 125947,
+        "toyota": 54768,
+        "honda": 31007      
+      }
+    ],
+    "total": 231248      
+  },
+  "SGP": {
+    "car": [
+      {
+        "mercedes": 4336,
+        "toyota": 3997,
+        "bmw": 3626     
+      }
+    ],
+    "total": 30939  
+  }
+}
