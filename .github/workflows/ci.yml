@@ -8,14 +8,17 @@ jobs:
     runs-on: debian
     environment: deploy
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
       - name: Run all tests and linters
-        uses: make full-test
+        run: make full-test
 
       - name: Build the container
-        uses: make build
+        run: make build
 
       - name: Login to docker hub
-        uses: docker login --username paulchambaz --password ${{ secrets.DOCKER_HUB_TOKEN }}
+        run: docker login --username paulchambaz --password ${{ secrets.DOCKER_HUB_TOKEN }}
 
       - name: Publish the container
-        uses: make publish
+        run: make publish
