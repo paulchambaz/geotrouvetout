@@ -77,7 +77,10 @@ def main():
             parser.print_usage()
             sys.exit(1)
 
-        # geotrouvetout.get_location_data(45.765, 6.218)
+        # geotrouvetout.get_position_data(45.765, 6.218)
+        geotrouvetout.get_town_data("Chevaline")
+
+        exit(0)
 
         image = Image.open(image_file)
         country_probs = geotrouvetout.get_country(image)

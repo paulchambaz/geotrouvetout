@@ -1,3 +1,4 @@
+import os
 import json
 import logging
 import hashlib
@@ -12,13 +13,12 @@ import overpy
 # >= 0 -> only return the cache if the current age is is younger than the cache
 # age + max age
 
-def get_position_data(lat, lon, radius, max_age, use_cache):
+def get_position_data(latitude, longitude, max_age=365, use_cache=True):
     """
     Get open street map data from latitude and longitude.
 
-    @param lat The latitude to look around.
-    @param lon The longitude to look around.
-    @param radius The size of the area to look around.
+    @param latitude The latitude to look around.
+    @param longitude The longitude to look around.
     @param max_age Maximum age for a request to be valid in the cache, -1 to
     ignore.
     @param use_cache Wether or not to use the cache for this request.
@@ -26,36 +26,54 @@ def get_position_data(lat, lon, radius, max_age, use_cache):
     logging.info("get_position_data")
 
     # format proper query
-    query = f"""
-    [out:json];
-    node({lat - radius / 2},{lon - radius / 2},{lat + radius / 2},{lon + radius
-/ 2});
-    out center;
-    """
-      # node(around:5000,{lat},{lon})["name"]["addr:street"]["highway"];
-      # way(around:5000,{lat},{lon})["name"]["addr:street"]["highway"];
+    query = f"""[out:json];
+// input coordinates
+is_in({latitude},{longitude})->.searchArea;
+area.searchArea[name][admin_level=2]->.country;
+area.searchArea[name][admin_level=8]->.town;
+
+// find streets and buildings in the town
+way(area.town)[highway][name]->.streets;
+way(area.town)[building][name]->.buildings;
+
+// find natural features in the town
+way(area.town)[natural]->.naturalFeatures;
+
+// find land use information in the town
+way(area.town)[landuse]->.landuse;
+
+// returning result
+.country out body;
+.town out body;
+.streets out body;
+.buildings out body;
+.naturalFeatures out body;
+.landuse out body;"""
 
     # load cache
     cache = load_cache("cache.json")
 
-    if is_in_cache(query, cache):
+    if is_in_cache(query, cache) and use_cache:
+        logging.info("query is in the cache")
         # get result from cache
         result = cache_query(query, cache)
     else:
+        logging.info("making query to open street map")
         # get result from overpass api
         api = overpy.Overpass()
-        result = api.query(query)
+        data = api.query(query)
+
+        # format result to proper dict
+        result = process_result(data)
 
     # save result to cache
     save_query(query, result, cache)
     save_cache(cache, "cache.json")
 
-    # format result to proper dict
-
     # return resulting dict
+    return result
 
-
-def get_town_data(town, max_age, use_cache):
+def get_town_data(town, max_age=365, use_cache=True):
     """
     Get open street map data from a town name.
 
@@ -64,67 +82,106 @@ def get_town_data(town, max_age, use_cache):
     ignore.
     @param use_cache Wether or not to use the cache for this request.
     """
-    print("get_town_data")
+    logging.info("get_town_data")
 
     # format proper query
-    query = f"""
-    [out:json];
-    """
+    query = f"""[out:json];
+
+// input town name
+area[name="{town}"][admin_level=8]->.town;
+area.town[name][admin_level=2]->.country;
+
+// find streets and buildings in the town
+way(area.town)[highway][name]->.streets;
+way(area.town)[building][name]->.buildings;
+
+// find natural features in the town
+way(area.town)[natural]->.naturalFeatures;
+
+// find land use information in the town
+way(area.town)[landuse]->.landuse;
+
+// returning result
+.country out body;
+.town out body;
+.streets out body;
+.buildings out body;
+.naturalFeatures out body;
+.landuse out body;"""
 
     # load cache
     cache = load_cache("cache.json")
 
-    if is_in_cache(query, cache):
+    if is_in_cache(query, cache) and use_cache:
+        logging.info("query is in the cache")
         # get result from cache
         result = cache_query(query, cache)
     else:
+        logging.info("making query to open street map")
         # get result from overpass api
         api = overpy.Overpass()
-        result = api.query(query)
+        data = api.query(query)
+
+        # format result to proper dict
+        result = process_result(data)
 
     # save result to cache
     save_query(query, result, cache)
     save_cache(cache, "cache.json")
 
-    # format result to proper dict
-
     # return resulting dict
+    return result
 
+def process_result(result):
+    data = {
+        "country": None,
+        "town": None,
+        "streets": [],
+        "buildings": [],
+        "naturalFeatures": [],
+        "landuse": []
+    }
 
-def get_road_data(road, max_age, use_cache):
-    """
-    Get open street map data from a street name.
+    # Process country and town
+    for area in result.areas:
+        if area.tags.get("admin_level") == "2":
+            data["country"] = area.tags.get("name")
+        elif area.tags.get("admin_level") == "8":
+            data["town"] = area.tags.get("name")
 
-    @param street The street to look around.
-    @param max_age Maximum age for a request to be valid in the cache, -1 to
-    ignore.
-    @param use_cache Wether or not to use the cache for this request.
-    """
-    print("get_road_data")
+    # Process streets
+    for way in result.ways:
+        if "highway" in way.tags and "name" in way.tags:
+            data["streets"].append(way.tags["name"])
 
-    # format proper query
-    query = f"""
-    [out:json];
-    """
+    # Process buildings
+    for way in result.ways:
+        if "building" in way.tags and "name" in way.tags:
+            data["buildings"].append(way.tags["name"])
 
-    # load cache
-    cache = load_cache("cache.json")
+    # Process natural features
+    for way in result.ways:
+        if "natural" in way.tags:
+            data["naturalFeatures"].append(way.tags["natural"])
 
-    if is_in_cache(query, cache):
-        # get result from cache
-        result = cache_query(query, cache)
-    else:
-        # get result from overpass api
-        api = overpy.Overpass()
-        result = api.query(query)
+    for rel in result.relations:
+        if "natural" in rel.tags:
+            data["naturalFeatures"].append(rel.tags["natural"])
 
-    # save result to cache
-    save_query(query, result, cache)
-    save_cache(cache, "cache.json")
+    # Process landuse
+    for way in result.ways:
+        if "landuse" in way.tags:
+            data["landuse"].append(way.tags["landuse"])
 
-    # format result to proper dict
+    for rel in result.relations:
+        if "landuse" in rel.tags:
+            data["landuse"].append(rel.tags["landuse"])
 
-    # return resulting dict
+    # Deduplicate lists
+    for key in ["streets", "buildings", "naturalFeatures", "landuse"]:
+        data[key] = list(set(data[key]))
+
+    return data
 
 
 def is_in_cache(query: str, cache: dict[str, any]) -> bool:
@@ -135,7 +192,7 @@ def is_in_cache(query: str, cache: dict[str, any]) -> bool:
     @param cache The cache.
     @retrun Wether or not the query is in the cache.
     """
-    print("is_in_cache")
+    logging.info("is_in_cache")
     query_hash = hashlib.md5(query.encode()).hexdigest()
 
     if query_hash in cache:
@@ -152,13 +209,13 @@ def cache_query(query: str, cache: dict[str, any]) -> any:
     @param cache The cache.
     @return The result of the request from the cache.
     """
-    print("cache_query")
+    logging.info("cache_query")
     query_hash = hashlib.md5(query.encode()).hexdigest()
 
     return cache[query_hash]
 
 
-def save_query(query, str, result: any, cache: dict[str, any]):
+def save_query(query: str, result: any, cache: dict[str, any]):
     """
     Saves the result of a query in the cache.
 
@@ -166,7 +223,7 @@ def save_query(query, str, result: any, cache: dict[str, any]):
     @param result The result of the query.
     @param cache The cache.
     """
-    print("save_query")
+    logging.info("save_query")
     query_hash = hashlib.md5(query.encode()).hexdigest()
 
     cache[query_hash] = result
@@ -179,9 +236,16 @@ def load_cache(cache_file: str) -> dict[str, any]:
     @param cache_file Path to the cache file.
     @return The dict of the cache.
     """
-    print("load_cache")
-    with open(cache_file, "r", encoding="utf-8") as file:
-        return json.load(file)
+    logging.info("load_cache")
+    directory = '/tmp/geotrouvetout'
+    os.makedirs(directory, exist_ok=True)
+    filepath = os.path.join(directory, cache_file)
+
+    try:
+        with open(filepath, "r", encoding="utf-8") as file:
+            return json.load(file)
+    except Exception as e:
+        return {}
 
 
 def save_cache(cache: dict[str, any], cache_file: str):
@@ -191,6 +255,10 @@ def save_cache(cache: dict[str, any], cache_file: str):
     @param cache The cache.
     @param cache_file The path to the cache file.
     """
-    print("save_cache")
-    with open(cache_file, "w", encoding="utf-8") as file:
+    logging.info("save_cache")
+    directory = '/tmp/geotrouvetout'
+    os.makedirs(directory, exist_ok=True)
+    filepath = os.path.join(directory, cache_file)
+
+    with open(filepath, "w", encoding="utf-8") as file:
        json.dump(cache, file) 
